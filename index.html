@@ -5,23 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>FourTwenty Analytics — Sandbox</title>
 
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-7XY4JD9KGS"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-7XY4JD9KGS');
-</script>
-
-  
   <!-- Google Tag Manager -->
   <script>
   (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
-  var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
-  j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-  f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WVC4SNLB); /* your GTM ID */
+    var f=d.getElementsByTagName(s)[0], j=d.createElement(s), dl=l!='dataLayer'?'&l='+l:'';
+    j.async=true; j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+    f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WVC4SNLB');  /* ← your GTM ID */
   </script>
   <!-- End Google Tag Manager -->
 
@@ -49,7 +39,11 @@
     <div class="hero">
       <h1>FourTwenty Analytics — Modular Dashboard Sandbox</h1>
       <p class="muted">Public playground for GA4 + GTM practice, BI artifacts, and portfolio workflows.</p>
-      <a class="btn" href="playground/ux_playground.html">Open the UX Playground →</a>
+      <a class="btn" href="playground/ux_playground.html"
+         onclick="signalNavClick('ux_playground_link','UX Playground','homepage')">Open the UX Playground →</a>
+      <!-- New tracked link to The Signal -->
+      <a class="btn" href="/signal-model/"
+         onclick="signalNavClick('signal_home_link','The Signal','homepage')">The Signal →</a>
     </div>
 
     <div class="grid">
@@ -57,7 +51,6 @@
         <h3>Getting Started</h3>
         <ol>
           <li>Create a GA4 property & a GTM Web container.</li>
-          <li>Edit this page to replace <code>GTM-XXXXXXX</code> with your container ID.</li>
           <li>Publish changes; verify with GTM Preview & GA4 DebugView.</li>
         </ol>
         <p class="muted">Events are PII-free and for sandbox learning only.</p>
@@ -67,11 +60,20 @@
         <h3>Key Repos</h3>
         <ul>
           <li><a href="https://github.com/zbreeden/FourTwentyAnalytics">FourTwentyAnalytics (this site)</a></li>
-          <li><a href="https://github.com/zbreeden/signal-model">Signal Model</a></li>
+          <li><a href="https://github.com/zbreeden/signal-model"
+                 onclick="signalNavClick('signal_repo_link','Signal Model Repo','homepage')">Signal Model</a></li>
           <li><a href="https://github.com/zbreeden/grower-model">Grower Model</a></li>
         </ul>
       </div>
     </div>
   </div>
+
+  <script>
+    /* Minimal helper so clicks are tracked in GA4 via GTM */
+    window.dataLayer = window.dataLayer || [];
+    function signalNavClick(id, text, location) {
+      dataLayer.push({event:'cta_click', cta_id:id, cta_text:text, location:location});
+    }
+  </script>
 </body>
 </html>
