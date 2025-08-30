@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FourTwenty Analytics — Sandbox</title>
+
+  <!-- Google Tag Manager -->
+  <script>
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+  var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+  j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+  f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WVC4SNLB); /* your GTM ID */
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <style>
+    :root { --bg:#0d1117; --fg:#c9d1d9; --card:#161b22; --accent:#58a6ff; }
+    body{background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;margin:0}
+    .wrap{max-width:980px;margin:0 auto;padding:36px 20px}
+    .hero,.card{background:var(--card);border:1px solid #30363d;border-radius:16px}
+    .hero{padding:24px 22px;margin-bottom:16px}
+    h1{margin:0 0 8px}
+    a{color:var(--accent);text-decoration:none}
+    .btn{display:inline-block;padding:.6rem 1rem;background:#21262d;border:1px solid #30363d;border-radius:10px;margin-top:10px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+    .card{padding:16px}
+    .muted{color:#8b949e}
+    code{background:#21262d;padding:.15rem .35rem;border-radius:6px}
+  </style>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WVC4SNLB"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <div class="wrap">
+    <div class="hero">
+      <h1>FourTwenty Analytics — Modular Dashboard Sandbox</h1>
+      <p class="muted">Public playground for GA4 + GTM practice, BI artifacts, and portfolio workflows.</p>
+      <a class="btn" href="playground/ux_playground.html">Open the UX Playground →</a>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Getting Started</h3>
+        <ol>
+          <li>Create a GA4 property & a GTM Web container.</li>
+          <li>Edit this page to replace <code>GTM-XXXXXXX</code> with your container ID.</li>
+          <li>Publish changes; verify with GTM Preview & GA4 DebugView.</li>
+        </ol>
+        <p class="muted">Events are PII-free and for sandbox learning only.</p>
+      </div>
+
+      <div class="card">
+        <h3>Key Repos</h3>
+        <ul>
+          <li><a href="https://github.com/zbreeden/FourTwentyAnalytics">FourTwentyAnalytics (this site)</a></li>
+          <li><a href="https://github.com/zbreeden/signal-model">Signal Model</a></li>
+          <li><a href="https://github.com/zbreeden/grower-model">Grower Model</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
