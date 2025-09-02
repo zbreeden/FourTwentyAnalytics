@@ -1,0 +1,9 @@
+- id: launch_model
+  name: Launch Model
+  emoji: "🚀"
+  orbit: launch
+  status: bloom
+  glyphs: [anchor, portfolio, entry]
+  repo_url: https://zbreeden.github.io/launch-model/
+  owners: [zach]
+

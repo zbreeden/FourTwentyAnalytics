@@ -1,0 +1,4 @@
+- key: portfolio
+  description: Public-facing entry artifacts
+  modules: [launch_model]
+
