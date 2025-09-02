@@ -2,7 +2,6 @@
   label: "Portfolio"
   description: "Public-facing entry artifacts"
   kind: audience
-  aliases: [public, site]
   gloss_ref: portfolio
   deprecated: false
 
