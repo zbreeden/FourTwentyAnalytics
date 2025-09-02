@@ -173,56 +173,69 @@
   <script src="https://unpkg.com/highlight.js/lib/common.min.js"></script>
 
   <script>
-  (function() {
-    // Configure your repo here
-    const GITHUB_USER = "zbreeden";
-    const REPO        = "FourTwentyAnalytics";
-    const BRANCH      = "main"; // change if your default branch differs
+(function () {
+  // Configure your repo here
+  const GITHUB_USER = "zbreeden";
+  const REPO        = "FourTwentyAnalytics";
+  const BRANCH      = "main"; // change if your default branch differs
+  const README_PATH = "README.md"; // adjust if your README lives elsewhere
 
-    const RAW_README = 'https://raw.githubusercontent.com/${GITHUB_USER}/${REPO}/refs/heads/${BRANCH}/README.md';   
-    const BASE_RAW    = `https://github.com/${GITHUB_USER}/${REPO}/${BRANCH}/`;
-    const BASE_REPO   = `https://github.com/${GITHUB_USER}/${REPO}/blob/${BRANCH}/`;  
+  // Bases
+  const RAW_BASE       = `https://raw.githubusercontent.com/${GITHUB_USER}/${REPO}/${BRANCH}/`;
+  const REPO_BLOB_BASE = `https://github.com/${GITHUB_USER}/${REPO}/blob/${BRANCH}/`;
 
-    const panel = document.getElementById("readme-panel");
-    if (!panel) return;
+  // File URLs
+  const RAW_README = `${RAW_BASE}${README_PATH}`;
 
-    fetch(RAW_README, { cache: "no-store" })
-      .then(r => { if (!r.ok) throw new Error(`Fetch failed (${r.status})`); return r.text(); })
-      .then(md => {
-        const html = marked.parse(md, { mangle: false, headerIds: true });
-        panel.innerHTML = html;
+  const panel = document.getElementById("readme-panel");
+  if (!panel) return;
 
-        // Rewrite relative images to RAW URLs
-        panel.querySelectorAll("img").forEach(img => {
-          const src = img.getAttribute("src") || "";
-          if (src && !/^(https?:)?\/\//i.test(src) && !src.startsWith("data:")) {
-            img.src = new URL(src, BASE_RAW).href;
-          }
-        });
+  fetch(RAW_README, { cache: "no-store", mode: "cors" })
+    .then(r => { if (!r.ok) throw new Error(`Fetch failed (${r.status})`); return r.text(); })
+    .then(md => {
+      // Render Markdown (fallback to plain text if marked isn't present)
+      const html = (window.marked)
+        ? marked.parse(md, { mangle: false, headerIds: true })
+        : `<pre>${md.replace(/[&<>]/g, s => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[s]))}</pre>`;
+      panel.innerHTML = html;
 
-        // Rewrite relative links to repository blob URLs
-        panel.querySelectorAll("a").forEach(a => {
-          const href = a.getAttribute("href") || "";
-          if (!href) return;
-          if (href.startsWith("#")) return; // anchors are fine
-          if (/^(https?:)?\/\//i.test(href) || href.startsWith("mailto:")) return; // absolute links
-          a.href = new URL(href, BASE_REPO).href;
-          a.target = "_blank"; a.rel = "noopener";
-        });
-
-        // Syntax highlighting
-        panel.querySelectorAll("pre code").forEach(block => { try { hljs.highlightElement(block); } catch(e) {} });
-      })
-      .catch(err => {
-        panel.innerHTML = `
-          <div style="padding:12px; border:1px solid var(--border); border-radius:10px;">
-            <strong>Couldn’t load README.md</strong><br/>
-            <code>${err.message}</code><br/>
-            <a href="${BASE_REPO}README.md" target="_blank" rel="noopener">Open README on GitHub</a>
-          </div>`;
+      // Rewrite relative images to RAW URLs
+      panel.querySelectorAll("img[src]").forEach(img => {
+        const src = img.getAttribute("src") || "";
+        if (src && !/^(https?:)?\/\//i.test(src) && !src.startsWith("data:")) {
+          img.src = new URL(src, RAW_BASE).href;
+        }
       });
-  })();
-  </script>
+
+      // Rewrite relative links to repository blob URLs
+      panel.querySelectorAll("a[href]").forEach(a => {
+        const href = a.getAttribute("href") || "";
+        if (!href) return;
+        if (href.startsWith("#")) return;                          // keep anchors
+        if (/^(https?:)?\/\//i.test(href) || href.startsWith("mailto:")) return; // keep absolutes
+        a.href = new URL(href, REPO_BLOB_BASE).href;
+        a.target = "_blank";
+        a.rel = "noopener";
+      });
+
+      // Syntax highlighting (if hljs is present)
+      if (window.hljs) {
+        panel.querySelectorAll("pre code").forEach(block => {
+          try { hljs.highlightElement(block); } catch (e) {}
+        });
+      }
+    })
+    .catch(err => {
+      panel.innerHTML = `
+        <div style="padding:12px; border:1px solid var(--border); border-radius:10px;">
+          <strong>Couldn’t load README.md</strong><br/>
+          <code>${err.message}</code><br/>
+          <a href="${REPO_BLOB_BASE}${README_PATH}" target="_blank" rel="noopener">Open README on GitHub</a>
+        </div>`;
+    });
+})();
+</script>
+
 
   <!-- Optional: Google Tag Manager (replace with your container ID) -->
   <!--
