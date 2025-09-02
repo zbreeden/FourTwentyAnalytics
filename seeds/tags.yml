@@ -1,4 +1,14 @@
 - key: portfolio
-  description: Public-facing entry artifacts
+  label: "Portfolio"
+  description: "Public-facing entry artifacts"
+  kind: "audience"
+  aliases: ["public", "site"]
+  gloss_ref: "portfolio"
   modules: [launch_model]
 
+- key: lineage
+  label: "Lineage"
+  description: "Provenance and data ancestry"
+  kind: "quality"
+  aliases: ["provenance", "audit"]
+  gloss_ref: "lineage"
