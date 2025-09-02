@@ -1,153 +1,170 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>FourTwenty Analytics — Sandbox</title>
-  <meta name="description" content="The Grove">
-  <meta name="theme-color" content="#0d1117">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FourTwenty Analytics — Portfolio Hub</title>
+  <meta name="description" content="FourTwenty Analytics portfolio hub. Left panel renders README.md from the repo root." />
+  <meta name="color-scheme" content="light dark" />
 
-  <!-- Favicons / icons -->
-  <link rel="icon" href="/assets/favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo-420-32.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/logo-420-256.png">
+  <!-- Favicon (optional) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🌿</text></svg>">
 
-  <!-- Context BEFORE GTM so page_view contains it -->
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({ site_area: 'main' });
-  </script>
+  <!-- GitHub Markdown styles (for nicer README rendering) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.5.1/github-markdown.min.css" integrity="sha512-5gCgV7rLyGuB1QKco67qXlUc9cWn2s/IOp3rCUTZHd5AxW1HjWj0o4s8g4CzQ5o2p8m0vgr2Q2kq9Tn0j0Qomw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <!-- Google Tag Manager (GTM only) -->
-  <script>
-  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
-    var f=d.getElementsByTagName(s)[0], j=d.createElement(s), dl=l!='dataLayer'?'&l='+l:'';
-    j.async=true; j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-    f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-WVC4SNLB');  /* ← your GTM ID */
-  </script>
-  <!-- End Google Tag Manager -->
+  <!-- highlight.js (syntax highlighting for code blocks) -->
+  <link rel="stylesheet" href="https://unpkg.com/highlight.js/styles/github.min.css">
 
   <style>
-    :root { --bg:#0d1117; --fg:#c9d1d9; --card:#161b22; --accent:#58a6ff; --border:#30363d; }
-    *{box-sizing:border-box}
-    body{background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;margin:0}
-    a{color:var(--accent);text-decoration:none}
-    .wrap{max-width:980px;margin:0 auto;padding:36px 20px}
-    .hero,.card{background:var(--card);border:1px solid var(--border);border-radius:16px}
-    .hero{padding:24px 22px;margin-bottom:16px}
-    .brand{display:flex;align-items:center;gap:12px;margin-bottom:8px}
-    .brand img{width:96px;height:96px}
-    h1{margin:0 0 4px;font-size:28px}
-    .muted{color:#8b949e}
-    .btn{display:inline-block;padding:.6rem 1rem;background:#21262d;border:1px solid var(--border);border-radius:10px;margin-top:10px}
-    .btn:hover{background:#2a3138}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
-    .card{padding:16px}
-    code{background:#21262d;padding:.15rem .35rem;border-radius:6px}
+    :root {
+      --bg: #0b0c0f;
+      --card: #12141a;
+      --muted: #98a2b3;
+      --text: #e5e7eb;
+      --border: #1f2230;
+      --accent: #22c55e;
+    }
+    html, body { height: 100%; }
+    body { margin: 0; font: 14px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji"; color: var(--text); background: linear-gradient(180deg, #0b0c0f, #0e1116); }
+    a { color: #93c5fd; }
+
+    /* Layout */
+    .wrap { display: grid; grid-template-rows: auto 1fr; height: 100vh; }
+    header { border-bottom: 1px solid var(--border); backdrop-filter: saturate(120%) blur(4px); background: rgba(13, 16, 22, 0.7); }
+    .bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 18px; }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 600; letter-spacing: .2px; }
+    .brand .dot { font-size: 18px; }
+    .brand .name { font-size: 15px; opacity: .9; }
+
+    main { display: grid; grid-template-columns: 1fr 320px; gap: 16px; padding: 16px; }
+    @media (max-width: 960px) { main { grid-template-columns: 1fr; } }
+
+    .panel { border: 1px solid var(--border); background: linear-gradient(180deg, #10131a, #0f1218); border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,.25); }
+    .panel .head { display:flex; align-items:center; justify-content:space-between; padding: 10px 14px; border-bottom: 1px solid var(--border); background: rgba(15, 18, 25, .6); }
+    .panel .head h3 { margin: 0; font-size: 13px; letter-spacing: .4px; text-transform: uppercase; color: var(--muted); }
+    .panel .body { padding: 0; }
+
+    /* README panel specifics */
+    #readme-panel { padding: 18px; max-height: calc(100vh - 140px); overflow: auto; }
+    .markdown-body { color: var(--text); background: transparent; }
+    .markdown-body h1, .markdown-body h2, .markdown-body h3, .markdown-body h4 { border-bottom: none; }
+
+    /* Right panel content placeholder (keep your existing content here) */
+    #right-panel { padding: 12px; }
+
+    footer { border-top: 1px solid var(--border); padding: 10px 16px; font-size: 12px; color: var(--muted); }
   </style>
 </head>
 <body>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WVC4SNLB"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-
   <div class="wrap">
-    <div class="hero">
-      <div class="brand">
-        <img src="/assets/logo-420-128.png" alt="FourTwenty Analytics">
-        <h1>FourTwenty Analytics — Modular Dashboard Sandbox</h1>
+    <!-- Top Bar (keep your existing content; tweak as needed) -->
+    <header>
+      <div class="bar">
+        <div class="brand">
+          <div class="dot">🌿</div>
+          <div class="name">FourTwenty Analytics — Portfolio Hub</div>
+        </div>
+        <nav style="display:flex; gap:10px; font-size:13px;">
+          <a href="https://github.com/zbreeden/FourTwentyAnalytics" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://zbreeden.github.io/FourTwentyAnalytics/" aria-current="page">Home</a>
+        </nav>
       </div>
-      <p class="muted">My portfolio is structured as a modular sandbox I call FourTwenty Analytics. Each repository is a model within an orbit — 🚀 The Launch, 🫀 The Archive, 📡 The Signal, 🏦 The Bank, and others — that together simulate the systems a data analyst navigates in the real world. This lets me practice end-to-end craft: framing problems in YAML specs, validating with QA rules, pulsing with daily signals, and archiving immutable evidence. It’s not just code; it’s a living ecosystem where I sharpen analysis, consistency, and storytelling — the same skills I bring into a role.</p>
+    </header>
 
-      <!-- Tracked CTAs -->
+    <main>
+      <!-- LEFT: README renderer -->
+      <section class="panel">
+        <div class="head">
+          <h3>README.md (repo root)</h3>
+        </div>
+        <div class="body">
+          <article id="readme-panel" class="markdown-body"></article>
+        </div>
+      </section>
 
-    </div>
+      <!-- RIGHT: keep your existing right-panel content (cards, links, etc.) -->
+      <aside class="panel">
+        <div class="head">
+          <h3>Side Panel</h3>
+        </div>
+        <div class="body" id="right-panel">
+          <!-- Replace this placeholder with your current right-panel markup. -->
+          <div style="padding:14px; color:var(--muted)">Your existing right-panel content lives here.</div>
+        </div>
+      </aside>
+    </main>
 
-    <div class="grid">
-      <div class="card">
-        <h3>Tag and Trigger Rituals - </h3>
-        <ol>
-          <li>Create a GA4 property & a GTM Web container.</li>
-          <li>Publish this site; verify with GTM Preview & GA4 DebugView.</li>
-          <li>Use the Signal playground to fire <code>cta_click</code>, <code>form_submit</code>, <code>nav_search</code>, <code>page_view</code>.</li>
-        </ol>
-        <p class="muted">Events are PII-free and for sandbox learning only.</p>
-        <p class='muted'>Web Container: GTM-WVC4SNLB</p>
-        <p class='muted'>Property: M503113160</p>
-        
-      </div>     
-
-      
-      <div class="card" id="Key Repos">
-  <h3>The Constellation</h3>
-
-  <!-- Core Systems -->
-  <div class="orbit">
-    <h4 class="orbit-title">Core Systems</h4>
-    <ul>
-      <li>🚀 <a href="https://zbreeden.github.io/launch-model/"
-             onclick="signalNavClick('launch_repo_link','Launch Model Repo','homepage')">Launch Model</a></li>
-      <li>🫀 <a href="https://zbreeden.github.io/archive-model/"
-             onclick="signalNavClick('archive_repo_link','Archive Model Repo','homepage')">Archive Model</a></li>
-      <li>📡 <a href="https://zbreeden.github.io/signal-model/"
-             onclick="signalNavClick('signal_repo_link','Signal Model Repo','homepage')">Signal Model</a></li>
-    </ul>
+    <footer>
+      <div>© FourTwenty Analytics — README panel auto-renders from <code>main/README.md</code>.</div>
+    </footer>
   </div>
 
-  <!-- Delivery & Insight -->
-  <div class="orbit">
-    <h4 class="orbit-title">Delivery &amp; Insight</h4>
-    <ul>
-      <li>🏦 <a href="https://zbreeden.github.io/bank-model/"
-             onclick="signalNavClick('bank_repo_link','Bank Model Repo','homepage')">Bank Model</a></li>
-      <li>🧠 <a href="https://zbreeden.github.io/evaluator-model/"
-             onclick="signalNavClick('evaluator_repo_link','Evaluator Model Repo','homepage')">Evaluator Model</a></li>
-      <li>📖 <a href="https://zbreeden.github.io/story-model/"
-             onclick="signalNavClick('story_repo_link','Story Model Repo','homepage')">Story Model</a></li>
-    </ul>
-  </div>
-
-  <!-- Growth & Experiments -->
-  <div class="orbit">
-    <h4 class="orbit-title">Growth &amp; Experiments</h4>
-    <ul>
-      <li>🌱 <a href="https://zbreeden.github.io/grower-model/"
-             onclick="signalNavClick('grower_repo_link','Grower Model Repo','homepage')">Grower Model</a></li>
-      <li>⚡ <a href="https://zbreeden.github.io/catalyst-model/"
-             onclick="signalNavClick('catalyst_repo_link','Catalyst Model Repo','homepage')">Catalyst Model</a></li>
-      <li>🎮 <a href="https://zbreeden.github.io/player-model/"
-             onclick="signalNavClick('player_repo_link','Player Model Repo','homepage')">Player Model</a></li>
-      <li>🎲 <a href="https://zbreeden.github.io/gambler-model/"
-             onclick="signalNavClick('gambler_repo_link','Gambler Model Repo','homepage')">Gambler Model</a></li>
-    </ul>
-  </div>
-
-  <!-- Orbit & Ops -->
-  <div class="orbit">
-    <h4 class="orbit-title">Orbit &amp; Ops</h4>
-    <ul>
-      <li>🛰️ <a href="https://zbreeden.github.io/orbiter-model/"
-             onclick="signalNavClick('orbiter_repo_link','Orbiter Model Repo','homepage')">Orbiter Model</a></li>
-      <li>⚓ <a href="https://zbreeden.github.io/anchor-model/"
-             onclick="signalNavClick('anchor_repo_link','Anchor Model Repo','homepage')">Anchor Model</a></li>
-      <li>🏢 <a href="https://zbreeden.github.io/firm-model/"
-             onclick="signalNavClick('firm_repo_link','Firm Model Repo','homepage')">Firm Model</a></li>
-      <li>🪞 <a href="https://zbreeden.github.io/mirror-model/"
-             onclick="signalNavClick('mirror_repo_link','Mirror Model Repo','homepage')">Mirror Model</a></li>
-    </ul>
-  </div>
-</div>
-
-    </div>
-  </div>
+  <!-- Marked (Markdown → HTML) -->
+  <script src="https://unpkg.com/marked/marked.min.js"></script>
+  <!-- highlight.js (syntax highlighting) -->
+  <script src="https://unpkg.com/highlight.js/lib/common.min.js"></script>
 
   <script>
-    /* Minimal helper so clicks are tracked in GA4 via GTM */
-    window.dataLayer = window.dataLayer || [];
-    function signalNavClick(id, text, location) {
-      dataLayer.push({ event:'cta_click', cta_id:id, cta_text:text, location:location });
-    }
+  (function() {
+    // Configure your repo here
+    const GITHUB_USER = "zbreeden";
+    const REPO        = "FourTwentyAnalytics";
+    const BRANCH      = "main"; // change if your default branch differs
+
+    const RAW_README  = `https://raw.githubusercontent.com/${GITHUB_USER}/${REPO}/${BRANCH}/README.md`;
+    const BASE_RAW    = `https://raw.githubusercontent.com/${GITHUB_USER}/${REPO}/${BRANCH}/`;
+    const BASE_REPO   = `https://github.com/${GITHUB_USER}/${REPO}/blob/${BRANCH}/`;
+
+    const panel = document.getElementById("readme-panel");
+    if (!panel) return;
+
+    fetch(RAW_README, { cache: "no-store" })
+      .then(r => { if (!r.ok) throw new Error(`Fetch failed (${r.status})`); return r.text(); })
+      .then(md => {
+        const html = marked.parse(md, { mangle: false, headerIds: true });
+        panel.innerHTML = html;
+
+        // Rewrite relative images to RAW URLs
+        panel.querySelectorAll("img").forEach(img => {
+          const src = img.getAttribute("src") || "";
+          if (src && !/^(https?:)?\/\//i.test(src) && !src.startsWith("data:")) {
+            img.src = new URL(src, BASE_RAW).href;
+          }
+        });
+
+        // Rewrite relative links to repository blob URLs
+        panel.querySelectorAll("a").forEach(a => {
+          const href = a.getAttribute("href") || "";
+          if (!href) return;
+          if (href.startsWith("#")) return; // anchors are fine
+          if (/^(https?:)?\/\//i.test(href) || href.startsWith("mailto:")) return; // absolute links
+          a.href = new URL(href, BASE_REPO).href;
+          a.target = "_blank"; a.rel = "noopener";
+        });
+
+        // Syntax highlighting
+        panel.querySelectorAll("pre code").forEach(block => { try { hljs.highlightElement(block); } catch(e) {} });
+      })
+      .catch(err => {
+        panel.innerHTML = `
+          <div style="padding:12px; border:1px solid var(--border); border-radius:10px;">
+            <strong>Couldn’t load README.md</strong><br/>
+            <code>${err.message}</code><br/>
+            <a href="${BASE_REPO}README.md" target="_blank" rel="noopener">Open README on GitHub</a>
+          </div>`;
+      });
+  })();
   </script>
+
+  <!-- Optional: Google Tag Manager (replace with your container ID) -->
+  <!--
+  <script>
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+    var f=d.getElementsByTagName(s)[0], j=d.createElement(s), dl=l!='dataLayer'?'&l='+l:'';
+    j.async=true; j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl; f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-XXXXXXX');
+  </script>
+  -->
 </body>
 </html>
