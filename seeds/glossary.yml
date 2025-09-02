@@ -1,0 +1,26 @@
+# Rich, human-facing definitions. Use stable keys (snake_case).
+- key: portfolio
+  term: "Portfolio"
+  definition: >
+    Content intended for external viewing (landing pages, demos, docs).
+    Aggregates public entry points across modules.
+  examples:
+    - "Launch Model GitHub Pages site"
+  see_also: ["launch", "entry"]
+
+- key: lineage
+  term: "Lineage"
+  definition: >
+    Recorded ancestry of data and artifacts across ETL steps and modules.
+  examples:
+    - "modules.parquet ← seeds/modules.yml (task=registry.materialize)"
+  see_also: ["provenance", "audit"]
+
+- key: anchor
+  term: "Anchor"
+  definition: >
+    A primary navigation root or canonical starting point.
+  examples:
+    - "Launch Model as the portfolio entry"
+  see_also: ["portfolio", "nav"]
+
