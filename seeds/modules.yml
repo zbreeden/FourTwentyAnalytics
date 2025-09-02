@@ -3,7 +3,8 @@
   emoji: "🚀"
   orbit: launch
   status: bloom
-  glyphs: [anchor, portfolio, entry]
-  repo_url: https://zbreeden.github.io/launch-model/
+  tags: [portfolio, entry]   # ← source of truth lives here
+  glyphs: [anchor]           # (optional, if glyphs are separate from tags)
+  repo_url: https://github.com/zbreeden/launch-model
+  pages_url: https://zbreeden.github.io/launch-model/
   owners: [zach]
-
