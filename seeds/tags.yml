@@ -1,14 +1,14 @@
 - key: portfolio
   label: "Portfolio"
   description: "Public-facing entry artifacts"
-  kind: "audience"
-  aliases: ["public", "site"]
-  gloss_ref: "portfolio"
-  modules: [launch_model]
+  kind: audience
+  aliases: [public, site]
+  gloss_ref: portfolio
+  deprecated: false
 
-- key: lineage
-  label: "Lineage"
-  description: "Provenance and data ancestry"
-  kind: "quality"
-  aliases: ["provenance", "audit"]
-  gloss_ref: "lineage"
+- key: entry
+  label: "Entry"
+  description: "Primary navigation/landing points"
+  kind: nav
+  gloss_ref: entry
+  deprecated: false
