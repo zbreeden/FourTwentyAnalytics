@@ -24,3 +24,295 @@
     - "Launch Model as the portfolio entry"
   see_also: ["portfolio", "nav"]
 
+
+- key: business-analysis
+  term: "Business Analysis"
+  definition: >
+    A disciplined practice that enables change by defining needs and recommending
+    solutions that deliver value to stakeholders. Emphasizes articulating the rationale
+    for change, shaping solutions, and ensuring delivered outcomes match expected value.
+  examples:
+    - "Scoping FourTwenty initiatives before building (e.g., The Trainer)"
+  see_also: ["babok-guide", "stakeholder", "requirements-levels", "solution-evaluation"]
+  tags: ["cbap", "credentials"]
+  orbit: "Delivery & Insight"
+  source:
+    course: "CBAP"
+    module: "Module 1 – Introduction"
+  status: "draft"
+
+- key: babok-guide
+  term: "BABOK Guide"
+  definition: >
+    The Guide to the Business Analysis Body of Knowledge from IIBA that defines the
+    profession and describes commonly accepted practices, knowledge areas, tasks,
+    techniques, and underlying competencies.
+  examples:
+    - "Referencing BABOK when mapping The Trainer tasks to knowledge areas"
+  see_also: ["iiba", "babok-knowledge-areas"]
+  tags: ["cbap", "standard"]
+  orbit: "Delivery & Insight"
+  source:
+    course: "CBAP"
+    module: "Module 1 – Introduction"
+  status: "draft"
+
+- key: iiba
+  term: "International Institute of Business Analysis (IIBA)"
+  definition: >
+    A global non-profit association for business analysis that maintains standards
+    (including the BABOK Guide) and offers certifications such as ECBA, CCBA, and CBAP.
+  examples:
+    - "Using ECBA/CCBA/CBAP levels to frame credentials on the Portfolio"
+  see_also: ["babok-guide", "cbap-certification"]
+  tags: ["cbap", "credentials"]
+  orbit: "Delivery & Insight"
+  source:
+    course: "CBAP"
+    module: "Module 1 – Introduction"
+  status: "draft"
+
+- key: cbap-certification
+  term: "CBAP Certification"
+  definition: >
+    IIBA’s top-tier credential for experienced business analysts. Eligibility includes
+    substantial BA experience (e.g., ~7,500 hours over 10 years) and professional
+    development hours, followed by an exam.
+  examples:
+    - "Mapping Zach’s BA/ETL history to CBAP eligibility requirements"
+  see_also: ["iiba", "babok-guide"]
+  tags: ["cbap", "credentials"]
+  orbit: "Delivery & Insight"
+  source:
+    course: "CBAP"
+    module: "Module 1 – Introduction"
+  status: "draft"
+
+- key: babok-knowledge-areas
+  term: "BABOK Knowledge Areas"
+  definition: >
+    Six domains that organize BA work: Business Analysis Planning & Monitoring;
+    Elicitation & Collaboration; Requirements Life Cycle Management; Strategy Analysis;
+    Requirements Analysis & Design Definition; and Solution Evaluation.
+  examples:
+    - "Tagging Trainer tasks with the relevant knowledge area"
+  see_also: ["elicitation", "requirements-lifecycle-management", "strategy-analysis", "solution-evaluation"]
+  tags: ["cbap", "framework"]
+  orbit: "Delivery & Insight"
+  source:
+    course: "CBAP"
+    module: "Module 1 – Introduction"
+  status: "draft"
+
+- key: elicitation
+  term: "Elicitation & Collaboration"
+  definition: >
+    Activities to uncover needs and requirements and to align stakeholder understanding
+    through interviews, workshops, observation, and co-design.
+  examples:
+    - "Stakeholder discovery for GA4+GTM sprint goals"
+  see_also: ["stakeholder", "requirements-levels"]
+  tags: ["cbap", "requirements"]
+  orbit: "Delivery & Insight"
+  source:
+    course: "CBAP"
+    module: "Module 1 – Introduction"
+  status: "draft"
+
+- key: requirements-lifecycle-management
+  term: "Requirements Life Cycle Management"
+  definition: >
+    Planning, tracing, maintaining, prioritizing, and approving requirements from
+    discovery through change, ensuring they remain current and aligned to value.
+  examples:
+    - "Trace GA4 events to stakeholder outcomes and update as scope changes"
+  see_also: ["requirements-levels", "solution-requirements"]
+  tags: ["cbap", "requirements"]
+  orbit: "Delivery & Insight"
+  source:
+    course: "CBAP"
+    module: "Module 1 – Introduction"
+  status: "draft"
+
+- key: strategy-analysis
+  term: "Strategy Analysis"
+  definition: >
+    Pre-project analysis to understand the current and future states, define
+    business goals and scope, and select initiatives that deliver value.
+  examples:
+    - "Define objectives for The Trainer (ritual cadence, streak goals)"
+  see_also: ["business-requirements", "solution-evaluation"]
+  tags: ["cbap", "planning"]
+  orbit: "Delivery & Insight"
+  source:
+    course: "CBAP"
+    module: "Module 1 – Introduction"
+  status: "draft"
+
+- key: solution-evaluation
+  term: "Solution Evaluation"
+  definition: >
+    Assessing a solution’s performance and value after or during delivery to verify it
+    achieves the desired outcomes and to identify improvements.
+  examples:
+    - "Validate GA4 custom events deliver the engagement metrics promised"
+  see_also: ["business-requirements", "non-functional-requirements"]
+  tags: ["cbap", "quality"]
+  orbit: "Delivery & Insight"
+  source:
+    course: "CBAP"
+    module: "Module 1 – Introduction"
+  status: "draft"
+
+- key: requirements-levels
+  term: "Requirements Levels"
+  definition: >
+    BABOK groups requirements into four levels: Business (why outcomes), Stakeholder
+    (needs/expectations by actor), Solution (capabilities and qualities), and Transition
+    (temporary needs to move from current to future state).
+  examples:
+    - "Mapping Trainer goals → user stories → acceptance criteria → rollout plan"
+  see_also: ["business-requirements", "stakeholder-requirements", "solution-requirements", "transition-requirements"]
+  tags: ["cbap", "requirements"]
+  orbit: "Delivery & Insight"
+  source:
+    course: "CBAP"
+    module: "Module 1 – Introduction"
+  status: "draft"
+
+- key: business-requirements
+  term: "Business Requirements"
+  definition: >
+    Statements of goals, objectives, and outcomes that justify a change and define
+    what success looks like for the organization (often tied to KPIs).
+  examples:
+    - "Increase GA4 event adoption by 50% within a month"
+  see_also: ["strategy-analysis", "stakeholder-requirements"]
+  tags: ["cbap", "requirements"]
+  orbit: "Delivery & Insight"
+  source:
+    course: "CBAP"
+    module: "Module 1 – Introduction"
+  status: "draft"
+
+- key: stakeholder-requirements
+  term: "Stakeholder Requirements"
+  definition: >
+    Needs and expectations of specific stakeholders or user groups, often expressed
+    as user stories to clarify who needs what and why.
+  examples:
+    - "As a visitor, I want my cart retained so I can resume later"
+  see_also: ["business-requirements", "solution-requirements", "elicitation"]
+  tags: ["cbap", "requirements"]
+  orbit: "Delivery & Insight"
+  source:
+    course: "CBAP"
+    module: "Module 1 – Introduction"
+  status: "draft"
+
+- key: solution-requirements
+  term: "Solution Requirements"
+  definition: >
+    Capabilities and qualities the solution must have to meet stakeholder needs;
+    split into functional (behaviors/acceptance criteria) and non-functional
+    (quality attributes and constraints).
+  examples:
+    - "Send reminder email when session expires and items remain in cart"
+  see_also: ["functional-requirements", "non-functional-requirements"]
+  tags: ["cbap", "requirements"]
+  orbit: "Delivery & Insight"
+  source:
+    course: "CBAP"
+    module: "Module 1 – Introduction"
+  status: "draft"
+
+- key: functional-requirements
+  term: "Functional Requirements"
+  definition: >
+    Behaviors the solution performs in response to inputs or events, often captured
+    as acceptance criteria for user stories.
+  examples:
+    - "Trigger 'scroll_opened' GA event when README panel expands"
+  see_also: ["solution-requirements", "non-functional-requirements"]
+  tags: ["cbap", "requirements"]
+  orbit: "Delivery & Insight"
+  source:
+    course: "CBAP"
+    module: "Module 1 – Introduction"
+  status: "draft"
+
+- key: non-functional-requirements
+  term: "Non-Functional Requirements (Quality Attributes)"
+  definition: >
+    Conditions under which the solution must remain effective (e.g., security,
+    performance, availability, accessibility, maintainability, recoverability, audit).
+  examples:
+    - "Handle 100 requests per minute without delayed response"
+  see_also: ["solution-requirements", "solution-evaluation"]
+  tags: ["cbap", "quality"]
+  orbit: "Delivery & Insight"
+  source:
+    course: "CBAP"
+    module: "Module 1 – Introduction"
+  status: "draft"
+
+- key: transition-requirements
+  term: "Transition Requirements"
+  definition: >
+    Temporary capabilities and conditions needed to move from current to future
+    state, such as data migration, training, and phased releases.
+  examples:
+    - "Migrate historic events to new GA4 property; train contributors"
+  see_also: ["requirements-levels", "solution-evaluation"]
+  tags: ["cbap", "delivery"]
+  orbit: "Delivery & Insight"
+  source:
+    course: "CBAP"
+    module: "Module 1 – Introduction"
+  status: "draft"
+
+- key: underlying-competencies
+  term: "Underlying Competencies"
+  definition: >
+    Human skills and business knowledge that complement BA methods—communication,
+    facilitation, critical thinking, domain awareness—enabling effective practice.
+  examples:
+    - "Facilitating a cross-module retro for The Trainer"
+  see_also: ["elicitation", "perspective"]
+  tags: ["cbap", "skills"]
+  orbit: "Delivery & Insight"
+  source:
+    course: "CBAP"
+    module: "Module 1 – Introduction"
+  status: "draft"
+
+- key: perspective
+  term: "Perspective (BA Flavor)"
+  definition: >
+    An organizational context or delivery approach (e.g., agile, process-centric,
+    product-led) that shapes which techniques you use and how you apply BA tasks.
+  examples:
+    - "Adapting Trainer backlog practices for a startup vs. a risk-averse enterprise"
+  see_also: ["babok-knowledge-areas", "underlying-competencies"]
+  tags: ["cbap", "approach"]
+  orbit: "Delivery & Insight"
+  source:
+    course: "CBAP"
+    module: "Module 1 – Introduction"
+  status: "draft"
+
+- key: stakeholder
+  term: "Stakeholder"
+  definition: >
+    Any person, group, or organization with a role in, interest in, or impact from
+    a change. Stakeholders supply needs, consume outcomes, and collaborate to define value.
+  examples:
+    - "Data consumer for GA4 metrics (marketing analyst, product owner)"
+  see_also: ["elicitation", "stakeholder-requirements"]
+  tags: ["cbap"]
+  orbit: "Delivery & Insight"
+  source:
+    course: "CBAP"
+    module: "Module 1 – Introduction"
+  status: "draft"
+
