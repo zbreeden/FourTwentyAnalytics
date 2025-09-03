@@ -39,8 +39,34 @@ see_also: List of related keys (not terms). Helps cross-link concepts within you
     - "Launch Model GitHub Pages site"
   see_also: ["launch", "entry"]
 
+--> seeds/tags.yml <--
 
+key: Stable, machine-friendly identifier in snake_case. Must be unique and should not change (dashboards and docs may reference it).
+label: Human-readable display name (Title Case). Safe to tweak without breaking references (consumers should point to key).
+description: Plain-language summary for humans. Use > (folded block) so it reads as one paragraph. Start with a crisp one-sentence summary; add an optional second line for nuance.
+kind: Category for grouping/filters. Choose one from the allowed set:
+audience, navigation, discipline, standard, framework, role, analytics_type, repository, pipeline, streaming, platform, knowledge, technique, process, language, format, credential, organization, capability, governance, requirements, practice, planning, source, concept, skills
+gloss_ref: The key of a related entry in seeds/glossary.yml. Validates cross-linking and keeps tags fewer than glossary terms.
+deprecated: Boolean flag. Set to true to retire a tag without breaking older artifacts; prefer introducing a replacement tag and updating references over time.
 
+- key: your_snake_case_tag
+  label: "Your Label"
+  description: >
+    One-sentence summary of how this tag is used across modules or docs.
+    Optional second sentence with scope or examples of where it applies.
+  kind: analytics_type
+  gloss_ref: your_glossary_key
+  deprecated: false
+
+- key: portfolio
+  label: "Portfolio"
+  description: >
+    Public-facing entry artifacts across the constellation.
+  kind: audience
+  gloss_ref: portfolio
+  deprecated: false
+
+Notes: Keep tags.yml intentionally smaller than glossary.yml; use it as the cross-module “integration surface.” When in doubt, put specifics in the glossary and map them to a broader tag via gloss_ref.
 
 ## License
 
