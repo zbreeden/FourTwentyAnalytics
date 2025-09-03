@@ -1,0 +1,94 @@
+﻿type,key,note,new_key,term
+duplicate_original_key,apache-spark,Duplicate 'key' found in source; consolidated.,,
+duplicate_original_key,big-data-5vs,Duplicate 'key' found in source; consolidated.,,
+duplicate_original_key,data-lake,Duplicate 'key' found in source; consolidated.,,
+duplicate_original_key,data-mart,Duplicate 'key' found in source; consolidated.,,
+duplicate_original_key,data-pipeline,Duplicate 'key' found in source; consolidated.,,
+duplicate_original_key,data-sources,Duplicate 'key' found in source; consolidated.,,
+duplicate_original_key,data-streams,Duplicate 'key' found in source; consolidated.,,
+duplicate_original_key,data-warehouse,Duplicate 'key' found in source; consolidated.,,
+duplicate_original_key,delimited-text-file,Duplicate 'key' found in source; consolidated.,,
+duplicate_original_key,etl,Duplicate 'key' found in source; consolidated.,,
+duplicate_original_key,hadoop,Duplicate 'key' found in source; consolidated.,,
+duplicate_original_key,hdfs,Duplicate 'key' found in source; consolidated.,,
+duplicate_original_key,hive,Duplicate 'key' found in source; consolidated.,,
+duplicate_original_key,json,Duplicate 'key' found in source; consolidated.,,
+duplicate_original_key,nosql-database,Duplicate 'key' found in source; consolidated.,,
+duplicate_original_key,python,Duplicate 'key' found in source; consolidated.,,
+duplicate_original_key,r-language,Duplicate 'key' found in source; consolidated.,,
+duplicate_original_key,relational-database,Duplicate 'key' found in source; consolidated.,,
+duplicate_original_key,semi-structured-data,Duplicate 'key' found in source; consolidated.,,
+duplicate_original_key,sql,Duplicate 'key' found in source; consolidated.,,
+duplicate_original_key,structured-data,Duplicate 'key' found in source; consolidated.,,
+duplicate_original_key,unstructured-data,Duplicate 'key' found in source; consolidated.,,
+duplicate_original_key,xlsx,Duplicate 'key' found in source; consolidated.,,
+duplicate_original_key,xml,Duplicate 'key' found in source; consolidated.,,
+key_renamed,analyst-skills,,analyst_skills,
+key_renamed,apache-spark,,apache_spark,
+key_renamed,babok-guide,,babok_guide,
+key_renamed,babok-knowledge-areas,,babok_knowledge_areas,
+key_renamed,bi-analyst,,bi_analyst,
+key_renamed,big-data-5vs,,big_data_5vs,
+key_renamed,business-analysis,,business_analysis,
+key_renamed,business-glossary,,business_glossary,
+key_renamed,business-requirements,,business_requirements,
+key_renamed,cbap-certification,,cbap_certification,
+key_renamed,concept-modeling,,concept_modeling,
+key_renamed,data-analysis-process,,data_analysis_process,
+key_renamed,data-analyst,,data_analyst,
+key_renamed,data-ecosystem,,data_ecosystem,
+key_renamed,data-engineer,,data_engineer,
+key_renamed,data-lake,,data_lake,
+key_renamed,data-mart,,data_mart,
+key_renamed,data-pipeline,,data_pipeline,
+key_renamed,data-scientist,,data_scientist,
+key_renamed,data-sources,,data_sources,
+key_renamed,data-streams,,data_streams,
+key_renamed,data-warehouse,,data_warehouse,
+key_renamed,delimited-text-file,,delimited_text_file,
+key_renamed,descriptive-analytics,,descriptive_analytics,
+key_renamed,diagnostic-analytics,,diagnostic_analytics,
+key_renamed,functional-requirements,,functional_requirements,
+key_renamed,generative-ai-for-analysts,,generative_ai_for_analysts,
+key_renamed,given-when-then,,given_when_then,
+key_renamed,non-functional-requirements,,non_functional_requirements,
+key_renamed,nosql-database,,nosql_database,
+key_renamed,predictive-analytics,,predictive_analytics,
+key_renamed,prescriptive-analytics,,prescriptive_analytics,
+key_renamed,r-language,,r_language,
+key_renamed,relational-database,,relational_database,
+key_renamed,requirements-levels,,requirements_levels,
+key_renamed,requirements-lifecycle-management,,requirements_lifecycle_management,
+key_renamed,semi-structured-data,,semi_structured_data,
+key_renamed,solution-evaluation,,solution_evaluation,
+key_renamed,solution-requirements,,solution_requirements,
+key_renamed,stakeholder-requirements,,stakeholder_requirements,
+key_renamed,strategy-analysis,,strategy_analysis,
+key_renamed,structured-data,,structured_data,
+key_renamed,transition-requirements,,transition_requirements,
+key_renamed,underlying-competencies,,underlying_competencies,
+key_renamed,unstructured-data,,unstructured_data,
+removed_duplicate,structured_data,,,Structured Data
+removed_duplicate,semi_structured_data,,,Semi-Structured Data
+removed_duplicate,unstructured_data,,,Unstructured Data
+removed_duplicate,delimited_text_file,,,Delimited Text File (CSV/TSV)
+removed_duplicate,xlsx,,,XLSX (Excel Workbook)
+removed_duplicate,xml,,,XML
+removed_duplicate,json,,,JSON
+removed_duplicate,data_sources,,,Data Sources
+removed_duplicate,data_streams,,,Data Streams
+removed_duplicate,relational_database,,,Relational Database (RDBMS)
+removed_duplicate,nosql_database,,,NoSQL Database
+removed_duplicate,data_warehouse,,,Data Warehouse
+removed_duplicate,data_mart,,,Data Mart
+removed_duplicate,data_lake,,,Data Lake
+removed_duplicate,etl,,,"Extract, Transform, Load (ETL)"
+removed_duplicate,data_pipeline,,,Data Pipeline
+removed_duplicate,big_data_5vs,,,Big Data (5 Vs)
+removed_duplicate,hadoop,,,Apache Hadoop
+removed_duplicate,hdfs,,,Hadoop Distributed File System (HDFS)
+removed_duplicate,hive,,,Apache Hive
+removed_duplicate,apache_spark,,,Apache Spark
+removed_duplicate,sql,,,SQL
+removed_duplicate,python,,,Python
+removed_duplicate,r_language,,,R (Language)
