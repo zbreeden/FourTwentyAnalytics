@@ -13,7 +13,7 @@ readme.md:  this scroll meant to be a running broadcasting of how FourTwenty Ana
 assets/:  a set of images specific to FourTwenty Analytics.
 seeds/: a collection of data seeds meant to create a living system of modules.
 
---> seed/glossary.yml <--
+--> seeds/glossary.yml <--
 
 key: Stable, machine-friendly identifier in snake_case. Must be unique and should never change (other files may reference it).
 term: Human-readable label (usually Title Case). Safe to tweak for wording, since references should point to key, not term.
