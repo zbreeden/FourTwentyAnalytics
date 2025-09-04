@@ -1,4 +1,21 @@
-- id: launch
-  icon: "🚀"
+- id: core
+  label: "Core Systems"
+  emoji: "🪐"
   order: 10
-
+  meaning: "Foundation of the constellation—identity, scaffolding, and telemetry."
+  scope:
+    - "Identity & homepage"
+    - "Seeds & governance"
+    - "Signals & analytics"
+  includes:
+    - repo: "launch-model"   # 🚀 foundation / entry
+    - repo: "archive-model"  # 🫀 heart / records
+    - repo: "signal-model"   # 📡 nerves / telemetry
+  kpis:
+    - "Seeds compliance across repos (glossary.yml, tags.yml, statuses.yml present)"
+    - "Telemetry coverage and event quality"
+    - "Uptime of public artifacts (Pages, demos)"
+  policies:
+    - "Seed schema changes require PR + migration notes"
+    - "Core repos must remain public and pass CI checks"
+  see_also: ["delivery-insight", "growth-experiment", "orbit-ops"]
