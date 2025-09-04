@@ -1,13 +1,18 @@
 orbit_icons:
-  launch: "🚀"
-  archive: "🫀"
+  core: ""
+  delivery-insight: ""
+  growth-experiment: ""
+  elemental-system: ""
+  orbit-ops: ""
 status_icons:
   seed: "🌱"
   sprout: "🌿"
   budding: "🌼"
   bloom: "🌺"
   dormant: "🍂"
+  active: ""
 glyph_icons:
   anchor: "⚓️"
   lineage: "🧬"
-
+  launch: "🚀"
+  archive: "🫀"
