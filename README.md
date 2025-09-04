@@ -6,6 +6,7 @@ simulate the systems a data analyst navigates in the real world.
 *This lets me practice end-to-end craft: framing problems in YAML specs, validating with QA rules, pulsing with daily signals, 
 and archiving immutable evidence. 
 *It’s not just code; it’s a living ecosystem where I sharpen analysis, consistency, and storytelling — the same skills I bring into a role.
+*Scrollkeeper Note --> My suns can wander all they want as long as 4/20 is seeded.
 
 Scaffolding -
 index.html:  portfolio website.
