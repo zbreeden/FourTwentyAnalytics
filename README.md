@@ -90,6 +90,27 @@ links:
     url: "https://github.com/zbreeden/FourTwentyAnalytics/blob/main/scripts/sync_seeds.py"
 SIGNAL:END -->
 
+## 🌌 Core Systems Creed
+
+The Core Systems are the heartbeat of the constellation — the foundation that keeps every orbit aligned.  
+Each system has a distinct mission:
+
+- 🚀 **The Launch** → promotes **consistency**  
+  Ensures new suns are seeded with repeatable, reliable foundations.
+
+- 🫀 **The Archive** → promotes **longevity**  
+  Breathes life into the constellation by maintaining memory, seeds, and history.
+
+- 📡 **The Signal** → promotes **opportunity**  
+  Acts as the nervous system — scanning outward and broadcasting inward to find value.
+
+- 🛡️ **The Protector** → promotes **integrity**  
+  Safeguards the constellation by hardening workflows, monitoring health, and shortening recovery time.
+
+---
+
+These Core Systems work together so the constellation remains consistent, long-lived, opportunistic, and trustworthy.
+
 ## License
 
 MIT — See `LICENSE`. Use freely; please don’t send PII to the sandbox.
