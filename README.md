@@ -8,14 +8,14 @@ and archiving immutable evidence.
 *It’s not just code; it’s a living ecosystem where I sharpen analysis, consistency, and storytelling — the same skills I bring into a role.
 *Scrollkeeper Note --> My suns can wander all they want as long as 4/20 is seeded.
 
-Broadcasts -
+Broadcasts - using this same structured broadcast in all Suns and their respective README scrolls enables The Signal to present important milestones on its dashboard.
 
 <!-- SIGNAL:START
 id: 2025-09-04-hub-learns-workflows
 ts_utc: 2025-09-04T20:00:00Z
-title: "Learned GitHub Workflows — hub now syncs seeds"
+title: "Learned GitHub Workflows — hub can now sync seeds across the constellation enabling greater conhesion"
 summary: >
-  I learned GitHub Actions and wired a hub → constellation seed sync.
+  Suitekeeper learned GitHub Actions and wired a hub → constellation seed sync.
   Editing anything under `seeds/**` in the hub now opens PRs across module repos
   with updated seeds. The Archive pulses read the merged changes, and The Signal
   can harvest these broadcasts into a feed.
@@ -35,8 +35,8 @@ Scaffolding -
 index.html:  portfolio website.
 readme.md:  this scroll meant to be a running broadcasting of how FourTwenty Analytics is built.
 assets/:  a set of images specific to FourTwenty Analytics.
-schema/: even seeds need machine genetics; these .yml files define the seeds in machine language.
-seeds/: a collection of data seeds meant to create a living system of modules.
+schema/: even living seeds need machine genetics; these .yml files define the seeds in machine language.
+seeds/: a collection of data seeds meant to create a living system of modules; these seeds all maintain home repo genetics as the constellation grows.
 
 --> schema/glossary.schema.yml <--
 
@@ -101,6 +101,9 @@ items:
   examples:
     - "Launch Model GitHub Pages site"
   see_also: ["launch", "entry"]
+
+--> schema/tags.schema.yml <--
+
 
 
 --> seeds/tags.yml <--
