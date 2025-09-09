@@ -15,15 +15,51 @@ assets/:  a set of images specific to FourTwenty Analytics.
 schema/: even seeds need machine genetics; these .yml files define the seeds in machine language.
 seeds/: a collection of data seeds meant to create a living system of modules.
 
---> schema/glossary.yml <--
+--> schema/glossary.schema.yml <--
+
+$schema: "https://json-schema.org/draft/2020-12/schema"
+title: "glossary.yml schema"
+type: array
+description: "An array of glossary entry objects."
+minItems: 1
+
+items:
+  type: object
+  additionalProperties: false
+  required: [key, term, definition]
+  properties:
+    key:
+      type: string
+      pattern: "^[a-z0-9_]+$"
+      description: "Stable snake_case identifier"
+    term:
+      type: string
+      minLength: 1
+      description: "Human-readable label (usually Title Case)"
+    definition:
+      type: string
+      minLength: 1
+      description: "Plain-language explanation. Folded (>) YAML is fine."
+    examples:
+      type: array
+      description: "Short, real uses (1–3 items)"
+      items:
+        type: string
+        minLength: 1
+    see_also:
+      type: array
+      description: "Related keys for cross-linking"
+      items:
+        type: string
+        pattern: "^[a-z0-9_]+$"
 
 --> seeds/glossary.yml <--
 
-key: Stable, machine-friendly identifier in snake_case. Must be unique and should never change (other files may reference it).
-term: Human-readable label (usually Title Case). Safe to tweak for wording, since references should point to key, not term.
-definition: Plain-language explanation for humans. Use > (folded block) so it reads as one paragraph. Start with a crisp one-sentence summary; add a second line for nuance if needed.
-examples: Short, real uses (1–3 items). Each item is a concise string that shows the term in context—an action, artifact, or sentence fragment.
-see_also: List of related keys (not terms). Helps cross-link concepts within your docs.
+# key: Stable, machine-friendly identifier in snake_case. Must be unique and should never change (other files may reference it).
+# term: Human-readable label (usually Title Case). Safe to tweak for wording, since references should point to key, not term.
+# definition: Plain-language explanation for humans. Use > (folded block) so it reads as one paragraph. Start with a crisp one-sentence summary; add a second line for nuance if needed.
+# examples: Short, real uses (1–3 items). Each item is a concise string that shows the term in context—an action, artifact, or sentence fragment.
+# see_also: List of related keys (not terms). Helps cross-link concepts within your docs.
 
 - key: your_snake_case_key
   term: "Your Term"
@@ -42,6 +78,7 @@ see_also: List of related keys (not terms). Helps cross-link concepts within you
   examples:
     - "Launch Model GitHub Pages site"
   see_also: ["launch", "entry"]
+
 
 --> seeds/tags.yml <--
 
