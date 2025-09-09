@@ -12,7 +12,10 @@ Scaffolding -
 index.html:  portfolio website.
 readme.md:  this scroll meant to be a running broadcasting of how FourTwenty Analytics is built.
 assets/:  a set of images specific to FourTwenty Analytics.
+schema/: even seeds need machine genetics; these .yml files define the seeds in machine language.
 seeds/: a collection of data seeds meant to create a living system of modules.
+
+--> schema/glossary.yml <--
 
 --> seeds/glossary.yml <--
 
