@@ -104,17 +104,42 @@ items:
 
 --> schema/tags.schema.yml <--
 
-
+$schema: "https://json-schema.org/draft/2020-12/schema"
+title: "tags seed"
+type: array
+items:
+  type: object
+  additionalProperties: false
+  required: [key, label, description, kind, gloss_ref, deprecated]
+  properties:
+    key:
+      type: string
+      pattern: "^[a-z0-9_]+$"
+      description: "Stable snake_case key"
+    label:
+      type: string
+      minLength: 1
+    description:
+      type: string
+      minLength: 1
+    kind:
+      type: string
+      enum: ["module","topic","kpi","status","orbit","tech"]
+    gloss_ref:
+      type: string
+      pattern: "^[a-z0-9_]+$"
+    deprecated:
+      type: boolean
 
 --> seeds/tags.yml <--
 
-key: Stable, machine-friendly identifier in snake_case. Must be unique and should not change (dashboards and docs may reference it).
-label: Human-readable display name (Title Case). Safe to tweak without breaking references (consumers should point to key).
-description: Plain-language summary for humans. Use > (folded block) so it reads as one paragraph. Start with a crisp one-sentence summary; add an optional second line for nuance.
-kind: Category for grouping/filters. Choose one from the allowed set:
-audience, navigation, discipline, standard, framework, role, analytics_type, repository, pipeline, streaming, platform, knowledge, technique, process, language, format, credential, organization, capability, governance, requirements, practice, planning, source, concept, skills
-gloss_ref: The key of a related entry in seeds/glossary.yml. Validates cross-linking and keeps tags fewer than glossary terms.
-deprecated: Boolean flag. Set to true to retire a tag without breaking older artifacts; prefer introducing a replacement tag and updating references over time.
+# key: Stable, machine-friendly identifier in snake_case. Must be unique and should not change (dashboards and docs may reference it).
+# label: Human-readable display name (Title Case). Safe to tweak without breaking references (consumers should point to key).
+# description: Plain-language summary for humans. Use > (folded block) so it reads as one paragraph. Start with a crisp one-sentence summary; add an optional second line for nuance.
+# kind: Category for grouping/filters. Choose one from the allowed set:
+  # audience, navigation, discipline, standard, framework, role, analytics_type, repository, pipeline, streaming, platform, knowledge, technique, process, language, format, credential, organization, capability, governance, requirements,  practice, planning, source, concept, skills
+# gloss_ref: The key of a related entry in seeds/glossary.yml. Validates cross-linking and keeps tags fewer than glossary terms.
+# deprecated: Boolean flag. Set to true to retire a tag without breaking older artifacts; prefer introducing a replacement tag and updating references over time.
 
 - key: your_snake_case_tag
   label: "Your Label"
