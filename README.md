@@ -8,6 +8,29 @@ and archiving immutable evidence.
 *It’s not just code; it’s a living ecosystem where I sharpen analysis, consistency, and storytelling — the same skills I bring into a role.
 *Scrollkeeper Note --> My suns can wander all they want as long as 4/20 is seeded.
 
+Broadcasts -
+
+<!-- SIGNAL:START
+id: 2025-09-04-hub-learns-workflows
+ts_utc: 2025-09-04T20:00:00Z
+title: "Learned GitHub Workflows — hub now syncs seeds"
+summary: >
+  I learned GitHub Actions and wired a hub → constellation seed sync.
+  Editing anything under `seeds/**` in the hub now opens PRs across module repos
+  with updated seeds. The Archive pulses read the merged changes, and The Signal
+  can harvest these broadcasts into a feed.
+tags: [learning, github-actions, workflows, seeds, sync, ci, hub]
+links:
+  - label: "Sync Seeds workflow (hub)"
+    url: "https://github.com/zbreeden/FourTwentyAnalytics/actions/workflows/sync_seeds.yml"
+  - label: "seedset.yml"
+    url: "https://github.com/zbreeden/FourTwentyAnalytics/blob/main/seeds/seedset.yml"
+  - label: "registry.yml"
+    url: "https://github.com/zbreeden/FourTwentyAnalytics/blob/main/seeds/registry.yml"
+  - label: "sync_seeds.py"
+    url: "https://github.com/zbreeden/FourTwentyAnalytics/blob/main/scripts/sync_seeds.py"
+SIGNAL:END -->
+
 Scaffolding -
 index.html:  portfolio website.
 readme.md:  this scroll meant to be a running broadcasting of how FourTwenty Analytics is built.
@@ -109,26 +132,6 @@ deprecated: Boolean flag. Set to true to retire a tag without breaking older art
 
 Notes: Keep tags.yml intentionally smaller than glossary.yml; use it as the cross-module “integration surface.” When in doubt, put specifics in the glossary and map them to a broader tag via gloss_ref.
 
-<!-- SIGNAL:START
-id: 2025-09-04-hub-learns-workflows
-ts_utc: 2025-09-04T20:00:00Z
-title: "Learned GitHub Workflows — hub now syncs seeds"
-summary: >
-  I learned GitHub Actions and wired a hub → constellation seed sync.
-  Editing anything under `seeds/**` in the hub now opens PRs across module repos
-  with updated seeds. The Archive pulses read the merged changes, and The Signal
-  can harvest these broadcasts into a feed.
-tags: [learning, github-actions, workflows, seeds, sync, ci, hub]
-links:
-  - label: "Sync Seeds workflow (hub)"
-    url: "https://github.com/zbreeden/FourTwentyAnalytics/actions/workflows/sync_seeds.yml"
-  - label: "seedset.yml"
-    url: "https://github.com/zbreeden/FourTwentyAnalytics/blob/main/seeds/seedset.yml"
-  - label: "registry.yml"
-    url: "https://github.com/zbreeden/FourTwentyAnalytics/blob/main/seeds/registry.yml"
-  - label: "sync_seeds.py"
-    url: "https://github.com/zbreeden/FourTwentyAnalytics/blob/main/scripts/sync_seeds.py"
-SIGNAL:END -->
 
 ## 🌌 Core Systems Creed
 
