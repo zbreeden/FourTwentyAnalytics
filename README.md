@@ -1,4 +1,4 @@
-##FourTwenty Analytics — Modular Dashboard Sandbox
+## FourTwenty Analytics — Modular Dashboard Sandbox
 
 *My portfolio is structured as a modular sandbox I call FourTwenty Analytics. 
 *Each repository is a model within an orbit — 🚀 The Launch, 🫀 The Archive, 📡 The Signal, 🏦 The Bank, and others — that together 
@@ -8,12 +8,12 @@ and archiving immutable evidence.
 *It’s not just code; it’s a living ecosystem where I sharpen analysis, consistency, and storytelling — the same skills I bring into a role.
 *Scrollkeeper Note --> My suns can wander all they want as long as 4/20 is seeded.
 
-Broadcasts - using this same structured broadcast in all Suns and their respective README scrolls enables The Signal to present important milestones on its dashboard.
+## Broadcasts - using this same structured broadcast in all Suns and their respective README scrolls enables The Signal to present important milestones on its dashboard.
 
 <!-- SIGNAL:START
 id: 2025-09-04-hub-learns-workflows
 ts_utc: 2025-09-04T20:00:00Z
-title: "Learned GitHub Workflows — hub can now sync seeds across the constellation enabling greater conhesion"
+title: "Learned GitHub Workflows — hub can now sync seeds across the constellation enabling greater cohesion"
 summary: >
   Suitekeeper learned GitHub Actions and wired a hub → constellation seed sync.
   Editing anything under `seeds/**` in the hub now opens PRs across module repos
@@ -31,12 +31,12 @@ links:
     url: "https://github.com/zbreeden/FourTwentyAnalytics/blob/main/scripts/sync_seeds.py"
 SIGNAL:END -->
 
-Scaffolding -
-index.html:  portfolio website.
-readme.md:  this scroll meant to be a running broadcasting of how FourTwenty Analytics is built.
-assets/:  a set of images specific to FourTwenty Analytics.
-schema/: even living seeds need machine genetics; these .yml files define the seeds in machine language.
-seeds/: a collection of data seeds meant to create a living system of modules; these seeds all maintain home repo genetics as the constellation grows.
+## Scaffolding -
+- `index.html`: portfolio website  
+- `README.md`: this scroll meant to be a running broadcast of how FourTwenty Analytics is built  
+- `assets/`: a set of images specific to FourTwenty Analytics  
+- `schema/`: even living seeds need machine genetics; these .yml files define the seeds in machine language  
+- `seeds/`: a collection of data seeds meant to create a living system of modules; these seeds all maintain home repo genetics as the constellation grows
 
 --> schema/glossary.schema.yml <--
 
@@ -146,7 +146,7 @@ items:
   description: >
     One-sentence summary of how this tag is used across modules or docs.
     Optional second sentence with scope or examples of where it applies.
-  kind: analytics_type
+  kind: analytics_type must include: ["module","topic","kpi","status","orbit","tech"]
   gloss_ref: your_glossary_key
   deprecated: false
 
@@ -154,7 +154,7 @@ items:
   label: "Portfolio"
   description: >
     Public-facing entry artifacts across the constellation.
-  kind: audience
+  kind: orbit
   gloss_ref: portfolio
   deprecated: false
 
