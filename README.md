@@ -17,6 +17,7 @@ and archiving immutable evidence.
  - `seeds/`: a collection of data seeds meant to create a living system of modules; these seeds all maintain home repo genetics as the constellation grows.
  - `signals/`: a collection of constellation signals picked up by The Signal for broadcasting portfolio development.
  - `scripts/`: a collection of Python scripts intended to facilitate constellation processes.
+ - `scrubs/`: a collection of QA scripts meant to periodically clean constellation data.
    
 
 --> schema/glossary.schema.yml <--
