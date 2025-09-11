@@ -21,9 +21,36 @@ and archiving immutable evidence.
  - `scrubs/`: a collection of QA scripts meant to periodically clean constellation data.
  - `.github/workflows/validate_seeds.yml`: validates seed structures against schemas.
 -**Development Funnels
+ - `scrolls/`: A collection of creative writing scrolls meant as a idea generator for the suitekeeper.
 
-## 
- 
+## Orbitals
+
+- 🌌 Core Systems Creed
+
+The Core Systems are the heartbeat of the constellation — the foundation that keeps every orbit aligned.  
+Each system has a distinct mission:
+
+- 🚀 **The Launch** → promotes **consistency**  
+  Ensures new suns are seeded with repeatable, reliable foundations.
+
+- 🫀 **The Archive** → promotes **longevity**  
+  Breathes life into the constellation by maintaining memory, seeds, and history.
+
+- 📡 **The Signal** → promotes **opportunity**  
+  Acts as the nervous system — scanning outward and broadcasting inward to find value.
+
+- 🛡️ **The Protector** → promotes **integrity**  
+  Safeguards the constellation by hardening workflows, monitoring health, and shortening recovery time.
+
+---
+
+These Core Systems work together so the constellation remains consistent, long-lived, opportunistic, and trustworthy.
+
+
+## Assets
+
+## Schemas
+
 --> schema/glossary.schema.yml <--
 
 $schema: "https://json-schema.org/draft/2020-12/schema"
@@ -62,32 +89,6 @@ items:
         type: string
         pattern: "^[a-z0-9_]+$"
 
---> seeds/glossary.yml <--
-
-# key: Stable, machine-friendly identifier in snake_case. Must be unique and should never change (other files may reference it).
-# term: Human-readable label (usually Title Case). Safe to tweak for wording, since references should point to key, not term.
-# definition: Plain-language explanation for humans. Use > (folded block) so it reads as one paragraph. Start with a crisp one-sentence summary; add a second line for nuance if needed.
-# examples: Short, real uses (1–3 items). Each item is a concise string that shows the term in context—an action, artifact, or sentence fragment.
-# see_also: List of related keys (not terms). Helps cross-link concepts within your docs.
-
-- key: your_snake_case_key
-  term: "Your Term"
-  definition: >
-    One-sentence summary.
-    Optional second sentence with context or scope.
-  examples:
-    - "Short example showing use"
-  see_also: ["related_key_1", "related_key_2"]
-
-- key: portfolio
-  term: "Portfolio"
-  definition: >
-    Content intended for external viewing (landing pages, demos, docs).
-    Aggregates public entry points across modules.
-  examples:
-    - "Launch Model GitHub Pages site"
-  see_also: ["launch", "entry"]
-
 --> schema/tags.schema.yml <--
 
 $schema: "https://json-schema.org/draft/2020-12/schema"
@@ -116,6 +117,34 @@ items:
       pattern: "^[a-z0-9_]+$"
     deprecated:
       type: boolean
+
+## Seeds
+
+--> seeds/glossary.yml <--
+
+# key: Stable, machine-friendly identifier in snake_case. Must be unique and should never change (other files may reference it).
+# term: Human-readable label (usually Title Case). Safe to tweak for wording, since references should point to key, not term.
+# definition: Plain-language explanation for humans. Use > (folded block) so it reads as one paragraph. Start with a crisp one-sentence summary; add a second line for nuance if needed.
+# examples: Short, real uses (1–3 items). Each item is a concise string that shows the term in context—an action, artifact, or sentence fragment.
+# see_also: List of related keys (not terms). Helps cross-link concepts within your docs.
+
+- key: your_snake_case_key
+  term: "Your Term"
+  definition: >
+    One-sentence summary.
+    Optional second sentence with context or scope.
+  examples:
+    - "Short example showing use"
+  see_also: ["related_key_1", "related_key_2"]
+
+- key: portfolio
+  term: "Portfolio"
+  definition: >
+    Content intended for external viewing (landing pages, demos, docs).
+    Aggregates public entry points across modules.
+  examples:
+    - "Launch Model GitHub Pages site"
+  see_also: ["launch", "entry"]
 
 --> seeds/tags.yml <--
 
@@ -146,27 +175,14 @@ items:
 
 Notes: Keep tags.yml intentionally smaller than glossary.yml; use it as the cross-module “integration surface.” When in doubt, put specifics in the glossary and map them to a broader tag via gloss_ref.
 
+## Signals
 
-## 🌌 Core Systems Creed
+## Scripts
 
-The Core Systems are the heartbeat of the constellation — the foundation that keeps every orbit aligned.  
-Each system has a distinct mission:
+## Scrubs
 
-- 🚀 **The Launch** → promotes **consistency**  
-  Ensures new suns are seeded with repeatable, reliable foundations.
-
-- 🫀 **The Archive** → promotes **longevity**  
-  Breathes life into the constellation by maintaining memory, seeds, and history.
-
-- 📡 **The Signal** → promotes **opportunity**  
-  Acts as the nervous system — scanning outward and broadcasting inward to find value.
-
-- 🛡️ **The Protector** → promotes **integrity**  
-  Safeguards the constellation by hardening workflows, monitoring health, and shortening recovery time.
-
----
-
-These Core Systems work together so the constellation remains consistent, long-lived, opportunistic, and trustworthy.
+## Workflows
+ 
 
 ## License
 
