@@ -121,11 +121,11 @@ items:
 
 --> seeds/glossary.yml <--
 
-# key: Stable, machine-friendly identifier in snake_case. Must be unique and should never change (other files may reference it).
-# term: Human-readable label (usually Title Case). Safe to tweak for wording, since references should point to key, not term.
-# definition: Plain-language explanation for humans. Use > (folded block) so it reads as one paragraph. Start with a crisp one-sentence summary; add a second line for nuance if needed.
-# examples: Short, real uses (1–3 items). Each item is a concise string that shows the term in context—an action, artifact, or sentence fragment.
-# see_also: List of related keys (not terms). Helps cross-link concepts within your docs.
+- key: Stable, machine-friendly identifier in snake_case. Must be unique and should never change (other files may reference it).
+- term: Human-readable label (usually Title Case). Safe to tweak for wording, since references should point to key, not term.
+- definition: Plain-language explanation for humans. Use > (folded block) so it reads as one paragraph. Start with a crisp one-sentence summary; add a second line for nuance if needed.
+- examples: Short, real uses (1–3 items). Each item is a concise string that shows the term in context—an action, artifact, or sentence fragment.
+- see_also: List of related keys (not terms). Helps cross-link concepts within your docs.
 
 - key: your_snake_case_key
   term: "Your Term"
