@@ -262,7 +262,7 @@ def main():
     if args.mode == "ticket":    return new_ticket()
     if args.mode == "broadcast": return new_broadcast()
 
-    print("\n⚙️  The Catalyst — CLI Buttons")
+    print("\n⚡  The Catalyst — CLI Buttons")
     print("1) New Ticket")
     print("2) New Broadcast")
     print("q) Quit")
