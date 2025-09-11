@@ -31,17 +31,17 @@ and archiving immutable evidence.
 The Core Systems are the heartbeat of the constellation — the foundation that keeps every orbit aligned.  
 Each system has a distinct mission:
 
-- 🚀 **The Launch** → promotes **consistency**  
-  Ensures new suns are seeded with repeatable, reliable foundations.
+   - 🚀 **The Launch** → promotes **consistency**  
+      - Ensures new suns are seeded with repeatable, reliable foundations.
 
-- 🫀 **The Archive** → promotes **longevity**  
-  Breathes life into the constellation by maintaining memory, seeds, and history.
+   - 🫀 **The Archive** → promotes **longevity**  
+      - Breathes life into the constellation by maintaining memory, seeds, and history.
 
-- 📡 **The Signal** → promotes **opportunity**  
-  Acts as the nervous system — scanning outward and broadcasting inward to find value.
+   - 📡 **The Signal** → promotes **opportunity**  
+      - Acts as the nervous system — scanning outward and broadcasting inward to find value.
 
-- 🛡️ **The Protector** → promotes **integrity**  
-  Safeguards the constellation by hardening workflows, monitoring health, and shortening recovery time.
+   - 🛡️ **The Protector** → promotes **integrity**  
+     - Safeguards the constellation by hardening workflows, monitoring health, and shortening recovery time.
 
 ---
 
