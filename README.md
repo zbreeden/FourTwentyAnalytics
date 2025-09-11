@@ -43,7 +43,7 @@ Each system has a distinct mission:
    - 🛡️ **The Protector** → promotes **integrity**  
      - Safeguards the constellation by hardening workflows, monitoring health, and shortening recovery time.
 
->These Core Systems work together so the constellation remains consistent, long-lived, opportunistic, and trustworthy.
+>>>These Core Systems work together so the constellation remains consistent, long-lived, opportunistic, and trustworthy.
 
 
 ## Assets
