@@ -8,13 +8,16 @@ and archiving immutable evidence.
 - It’s not just code; it’s a living ecosystem where I sharpen analysis, consistency, and storytelling — the same skills I bring into a role.
 *Scrollkeeper Note --> My suns can wander all they want as long as 4/20 is seeded.
 
-## Scaffolding -
+## Scaffolding 
 -**Seeding**
- - `index.html`: portfolio website  
- - `README.md`: this scroll meant to be a running broadcast of how FourTwenty Analytics is built  
- - `assets/`: a set of images specific to FourTwenty Analytics
- - `schema/`: even living seeds need machine genetics; these .yml files define the seeds in machine language  
- - `seeds/`: a collection of data seeds meant to create a living system of modules; these seeds all maintain home repo genetics as the constellation grows
+ - `index.html`: portfolio website.  
+ - `README.md`: this scroll meant to be a running broadcast of how FourTwenty Analytics is built. 
+ - `assets/`: a set of images specific to FourTwenty Analytics.
+ - `schema/`: even living seeds need machine genetics; these .yml files define the seeds in machine language. 
+ - `seeds/`: a collection of data seeds meant to create a living system of modules; these seeds all maintain home repo genetics as the constellation grows.
+ - `signals/`: a collection of constellation signals picked up by The Signal for broadcasting portfolio development.
+ - `scripts/`: a collection of Python scripts intended to facilitate constellation processes.
+   
 
 --> schema/glossary.schema.yml <--
 
