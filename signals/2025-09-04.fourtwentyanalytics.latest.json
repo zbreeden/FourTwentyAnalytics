@@ -1,0 +1,49 @@
+{
+  "id": "2025-09-04-hub-learns-workflows",
+  "ts_utc": "2025-09-04T20:00:00Z",
+  "date": "2025-09-04",
+  "module": "The Hub (FourTwenty Analytics)",
+  "repo": "fourtwentyanalytics",
+  "title": "Learned GitHub Workflows — hub can now sync seeds across the constellation enabling greater cohesion",
+  "summary": "Suitekeeper learned GitHub Actions and wired a hub → constellation seed sync. Editing anything under `seeds/**` in the hub now opens PRs across module repos with updated seeds. The Archive pulses read the merged changes, and The Signal can harvest these broadcasts into a feed.",
+  "tags": ["learning", "github-actions", "workflows", "seeds", "sync", "ci", "hub"],
+  "rating": "critical",
+  "origin": {
+    "name": "FourTwenty Analytics (Hub)",
+    "url": "https://zbreeden.github.io/FourTwentyAnalytics/",
+    "emoji": "🌀"
+  },
+  "links": {
+    "readme": "https://github.com/zbreeden/FourTwentyAnalytics#readme",
+    "page": "https://zbreeden.github.io/FourTwentyAnalytics/",
+    "data": "https://github.com/zbreeden/FourTwentyAnalytics/tree/main/seeds",
+    "runbook": "https://github.com/zbreeden/FourTwentyAnalytics/actions/workflows/sync_seeds.yml"
+  },
+  "payload": {
+    "impact": "Hub can propagate schema/seed updates to all stars via PRs; Archive + Signal integrate downstream.",
+    "mechanism": "GitHub Actions workflow sync_seeds.yml with scripts/sync_seeds.py.",
+    "files_touched": [
+      "seeds/seedset.yml",
+      "seeds/registry.yml"
+    ],
+    "links_rich": [
+      {
+        "label": "Sync Seeds workflow (hub)",
+        "url": "https://github.com/zbreeden/FourTwentyAnalytics/actions/workflows/sync_seeds.yml"
+      },
+      {
+        "label": "seedset.yml",
+        "url": "https://github.com/zbreeden/FourTwentyAnalytics/blob/main/seeds/seedset.yml"
+      },
+      {
+        "label": "registry.yml",
+        "url": "https://github.com/zbreeden/FourTwentyAnalytics/blob/main/seeds/registry.yml"
+      },
+      {
+        "label": "sync_seeds.py",
+        "url": "https://github.com/zbreeden/FourTwentyAnalytics/blob/main/scripts/sync_seeds.py"
+      }
+    ]
+  },
+  "version": "1.0.0"
+}
