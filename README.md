@@ -1,35 +1,12 @@
 ## FourTwenty Analytics — Modular Dashboard Sandbox
 
-*My portfolio is structured as a modular sandbox I call FourTwenty Analytics. 
-*Each repository is a model within an orbit — 🚀 The Launch, 🫀 The Archive, 📡 The Signal, 🏦 The Bank, and others — that together 
+- My portfolio is structured as a modular sandbox I call FourTwenty Analytics. 
+- Each repository is a model within an orbit — 🚀 The Launch, 🫀 The Archive, 📡 The Signal, 🏦 The Bank, and others — that together 
 simulate the systems a data analyst navigates in the real world. 
-*This lets me practice end-to-end craft: framing problems in YAML specs, validating with QA rules, pulsing with daily signals, 
+- This lets me practice end-to-end craft: framing problems in YAML specs, validating with QA rules, pulsing with daily signals, 
 and archiving immutable evidence. 
-*It’s not just code; it’s a living ecosystem where I sharpen analysis, consistency, and storytelling — the same skills I bring into a role.
+- It’s not just code; it’s a living ecosystem where I sharpen analysis, consistency, and storytelling — the same skills I bring into a role.
 *Scrollkeeper Note --> My suns can wander all they want as long as 4/20 is seeded.
-
-## Broadcasts - using this same structured broadcast in all Suns and their respective README scrolls enables The Signal to present important milestones on its dashboard.
-
-<!-- SIGNAL:START
-id: 2025-09-04-hub-learns-workflows
-ts_utc: 2025-09-04T20:00:00Z
-title: "Learned GitHub Workflows — hub can now sync seeds across the constellation enabling greater cohesion"
-summary: >
-  Suitekeeper learned GitHub Actions and wired a hub → constellation seed sync.
-  Editing anything under `seeds/**` in the hub now opens PRs across module repos
-  with updated seeds. The Archive pulses read the merged changes, and The Signal
-  can harvest these broadcasts into a feed.
-tags: [learning, github-actions, workflows, seeds, sync, ci, hub]
-links:
-  - label: "Sync Seeds workflow (hub)"
-    url: "https://github.com/zbreeden/FourTwentyAnalytics/actions/workflows/sync_seeds.yml"
-  - label: "seedset.yml"
-    url: "https://github.com/zbreeden/FourTwentyAnalytics/blob/main/seeds/seedset.yml"
-  - label: "registry.yml"
-    url: "https://github.com/zbreeden/FourTwentyAnalytics/blob/main/seeds/registry.yml"
-  - label: "sync_seeds.py"
-    url: "https://github.com/zbreeden/FourTwentyAnalytics/blob/main/scripts/sync_seeds.py"
-SIGNAL:END -->
 
 ## Scaffolding -
 - `index.html`: portfolio website  
