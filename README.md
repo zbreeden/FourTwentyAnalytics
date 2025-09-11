@@ -20,6 +20,7 @@ and archiving immutable evidence.
  - `scripts/`: a collection of Python scripts intended to facilitate constellation processes.
  - `scrubs/`: a collection of QA scripts meant to periodically clean constellation data.
  - `.github/workflows/validate_seeds.yml`: validates seed structures against schemas.
+
 -**Development Funnels
  - `scrolls/`: A collection of creative writing scrolls meant as a idea generator for the suitekeeper.
 
