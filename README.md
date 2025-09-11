@@ -11,15 +11,19 @@ and archiving immutable evidence.
 ## Scaffolding 
 -**Seeding**
  - `index.html`: portfolio website.  
- - `README.md`: this scroll meant to be a running broadcast of how FourTwenty Analytics is built. 
+ - `README.md`: this scroll meant to be a running broadcast of how FourTwenty Analytics is built.
+ - `hub_pat.md`: The constellation API token; while this is generally a secret, this portfolio is public facing, so there is no PII.
  - `assets/`: a set of images specific to FourTwenty Analytics.
  - `schema/`: even living seeds need machine genetics; these .yml files define the seeds in machine language. 
  - `seeds/`: a collection of data seeds meant to create a living system of modules; these seeds all maintain home repo genetics as the constellation grows.
  - `signals/`: a collection of constellation signals picked up by The Signal for broadcasting portfolio development.
  - `scripts/`: a collection of Python scripts intended to facilitate constellation processes.
  - `scrubs/`: a collection of QA scripts meant to periodically clean constellation data.
-   
+ - `.github/workflows/validate_seeds.yml`: validates seed structures against schemas.
+-**Development Funnels
 
+## 
+ 
 --> schema/glossary.schema.yml <--
 
 $schema: "https://json-schema.org/draft/2020-12/schema"
