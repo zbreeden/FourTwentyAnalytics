@@ -34,7 +34,7 @@ BROADCAST_EVENT  = ["ticket_created", "pulse_inactivity", "ticket_completed", "n
 DEFAULT_ORIGIN = {
     "name": "FourTwenty • The Catalyst",
     "module": "catalyst-model",
-    "emoji": "⚙️",
+    "emoji": "⚡",
     "url": "https://zbreeden.github.io/catalyst-model/"
 }
 
