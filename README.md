@@ -28,7 +28,7 @@ and archiving immutable evidence.
 
 - 🌌 Core Systems Creed
 
-## The Core Systems are the heartbeat of the constellation — the foundation that keeps every orbit aligned.  
+>>The Core Systems are the heartbeat of the constellation — the foundation that keeps every orbit aligned.  
 Each system has a distinct mission:
 
    - 🚀 **The Launch** → promotes **consistency**  
