@@ -34,7 +34,7 @@ BROADCAST_EVENT  = ["ticket_created", "pulse_inactivity", "ticket_completed", "n
 DEFAULT_ORIGIN = {
     "name": "FourTwenty • The Catalyst",
     "module": "catalyst-model",
-    "emoji": "⚡",
+    "emoji": "⚙️",
     "url": "https://zbreeden.github.io/catalyst-model/"
 }
 
@@ -116,7 +116,6 @@ def to_yaml_list_block(items):
         if v is None:            return "null"
         s = str(v)
         if re.search(r'[:\-\[\]\{\}\n\r\t#]', s):
-            # quote risky scalars
             s = s.replace('"', '\\"')
             return f'"{s}"'
         return s
@@ -132,7 +131,7 @@ def to_yaml_list_block(items):
                     lines.append(f"  {k}:")
                     for x in v:
                         if isinstance(x, dict):
-                            lines.append(f"    -")
+                            lines.append("    -")
                             for kk, vv in x.items():
                                 lines.append(f"      {kk}: {emit_scalar(vv)}")
                         else:
@@ -239,5 +238,42 @@ def new_broadcast():
         "tags": tags,
     }
     if ticket_id:
-        obj["ticket]()
+        obj["ticket_id"] = ticket_id  # <-- fixed line
+
+    content = json.dumps(obj, ensure_ascii=False, indent=2)
+
+    ensure_exports()
+    fname = f"{iso_utc_now().replace(':','').replace('-','').replace('T','_').replace('Z','Z')}-broadcast.json"
+    outpath = EXPORTS_DIR / fname
+    outpath.write_text(content + "\n", encoding="utf-8")
+
+    print("\n--- JSON (also saved to exports) ---\n")
+    print(content)
+    if mac_copy(content):
+        print("(Copied to clipboard ✅)")
+    print(f"Saved: {outpath}\n")
+    return 0
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--mode", choices=["menu", "ticket", "broadcast"], default="menu")
+    args = ap.parse_args()
+
+    if args.mode == "ticket":    return new_ticket()
+    if args.mode == "broadcast": return new_broadcast()
+
+    print("\n⚙️  The Catalyst — CLI Buttons")
+    print("1) New Ticket")
+    print("2) New Broadcast")
+    print("q) Quit")
+    while True:
+        choice = input("> ").strip().lower()
+        if choice == "1": new_ticket()
+        elif choice == "2": new_broadcast()
+        elif choice in ("q", "quit", "exit"): break
+        else: print("Choose 1, 2, or q")
+    return 0
+
+if __name__ == "__main__":
+    sys.exit(main())
 
