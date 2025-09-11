@@ -239,5 +239,5 @@ def new_broadcast():
         "tags": tags,
     }
     if ticket_id:
-        obj["ticke]()
+        obj["ticket]()
 
