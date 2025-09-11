@@ -2,7 +2,7 @@
   "id": "2025-09-10T20:00:00Z-fourtwentyanalytics-broadcast-seed",
   "ts_utc": "2025-09-10T20:00:00Z",
   "date": "2025-09-10",
-  "module": "FourTwentyAnalytics",
+  "module": "FourTwenty Analytics",
   "repo": "fourtwentyanalytics",
   "title": "Master star broadcast seed initialized",
   "summary": "Bootstrapped constellation broadcasting: schema, nightly pulse, and Signal renderer.",
