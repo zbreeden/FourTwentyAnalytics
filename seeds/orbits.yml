@@ -8,9 +8,10 @@
     - "Seeds & governance"
     - "Signals & analytics"
   includes:
-    - repo: "launch-model"   # 🚀 foundation / entry
-    - repo: "archive-model"  # 🫀 heart / records
-    - repo: "signal-model"   # 📡 nerves / telemetry
+    - repo: "launch-model"      # 🚀 foundation / entry
+    - repo: "archive-model"     # 🫀 heart / records
+    - repo: "signal-model"      # 📡 nerves / telemetry
+    - repo: "protector-model:   # 🛡️ nerves / telemetry
   kpis:
     - "Seeds compliance across repos (glossary.yml, tags.yml, statuses.yml present)"
     - "Telemetry coverage and event quality"
