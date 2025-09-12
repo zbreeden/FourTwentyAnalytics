@@ -11,7 +11,7 @@
     - repo: "launch-model"      # 🚀 foundation / entry
     - repo: "archive-model"     # 🫀 heart / records
     - repo: "signal-model"      # 📡 nerves / telemetry
-    - repo: "protector-model:   # 🛡️ nerves / telemetry
+    - repo: "protector-model:   # 🛡️ integrity / QA
   kpis:
     - "Seeds compliance across repos (glossary.yml, tags.yml, statuses.yml present)"
     - "Telemetry coverage and event quality"
@@ -19,7 +19,7 @@
   policies:
     - "Seed schema changes require PR + migration notes"
     - "Core repos must remain public and pass CI checks"
-  see_also: ["delivery-insight", "growth-experiment", "orbit-ops"]
+  see_also: ["delivery-insight", "growth-experiment", "orbit-ops", "elemental"]
 
 - id: delivery-insight
   label: "Delivery & Insight"
