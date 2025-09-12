@@ -8,10 +8,10 @@
     - "Seeds & governance"
     - "Signals & analytics"
   includes:
-    - repo: "launch-model"      # 🚀 foundation / entry
-    - repo: "archive-model"     # 🫀 heart / records
-    - repo: "signal-model"      # 📡 nerves / telemetry
-    - repo: "protector-model:   # 🛡️ integrity / QA
+    - repo: "launch-model"         # 🚀 foundation / entry
+    - repo: "archive-model"        # 🫀 heart / records
+    - repo: "signal-model"         # 📡 nerves / telemetry
+    - repo: "protector-model"      # 📡 integrity / QA
   kpis:
     - "Seeds compliance across repos (glossary.yml, tags.yml, statuses.yml present)"
     - "Telemetry coverage and event quality"
@@ -31,9 +31,11 @@
     - "Release readiness, QA, and demo assets"
     - "Stakeholder reporting & KPIs"
   includes:
-    - repo: "evaluator-model"   # 🧮 analytics & reporting
-    - repo: "anchor-model"      # ⚓ portfolio anchors
-    - repo: "bank-model"        # 💳 delivery metrics & demos
+    - repo: "evaluator-model"         # 🧮 analytics & reporting
+    - repo: "bank-model"              # 💳 delivery metrics & demos
+    - repo: "visualizer-model"        # 🎨 datasets & storytelling
+    - repo: "catalyst-model"          # ⚡ ticketing & scenario analysis
+    - repo: "story-model"             # 📖 narrative triggers & signals
   kpis:
     - "On-time delivery rate and demo reliability"
     - "Dashboard adoption/engagement (views, sessions, CTA)"
@@ -54,8 +56,10 @@
     - "Optimization loops and growth playbooks"
   includes:
     - repo: "grower-model"      # 🌱 optimization engine
-    - repo: "player-model"      # 🎲 scenarios & sims
-    - repo: "story-model"       # 📖 narrative triggers & signals
+    - repo: "player-model"      # 🎮 scenarios & sims
+    - repo: "gambler-model"     # 🎲 probability analysis
+    - repo: "trainer-model"     # 🧭 personal development
+    - repo: "coach-model"       # 💪 fitness & lifestyle
   kpis:
     - "Experiment velocity (launched per week) and win rate"
     - "Lift on target metrics (conversion, retention, LTV)"
@@ -77,7 +81,10 @@
   includes:
     - repo: "orbiter-model"     # 🛰️ automation & pulses
     - repo: "firm-model"        # 🏢 org/hub configuration
-    - repo: "catalyst-model"    # ⚙️ build & release tooling
+    - repo: "anchor-model"      # ⚓ portfolio anchors
+    - repo: "mirror-model"      # 🪞 reflection & self-awareness
+    - repo: "accountant-model"  # 💰 managing financials
+    
   kpis:
     - "Pulse success rate and mean time to repair (MTTR)"
     - "Seed compliance across repos and drift alerts"
