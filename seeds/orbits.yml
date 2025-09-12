@@ -105,7 +105,7 @@
     - "Shared assets, scaffolds, and templates"
     - "Governance notes and contribution guidelines"
   includes:
-    - repo: "FourTwentyAnalytics"  # hub repo
+    - repo: "FourTwentyAnalytics"  # 🔘 barycenter & suitekeeper
   kpis:
     - "Seed schema validity (lint/CI passing)"
     - "Cross-repo seed compliance rate"
