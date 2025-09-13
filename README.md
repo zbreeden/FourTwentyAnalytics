@@ -39,25 +39,26 @@ and archiving immutable evidence.
 
 --
 
-- 🌌 Core Systems Creed
+- 🌌 Core System Creed
 
->>The Core Systems are the heartbeat of the constellation — the foundation that keeps every orbit aligned.  
-Each system has a distinct mission:
+>>The Core System consists of the stars that support metaphorical life for the constellation — the foundation that keeps every other orbit aligned.  
+Each star has a distinct mission:
 
    - 🚀 **The Launch** → promotes **consistency**  
-      - Ensures new suns are seeded with repeatable, reliable foundations.
+      - Ensures new suns are seeded with repeatable, reliable foundations. Think genetic normalization.
 
    - 🫀 **The Archive** → promotes **longevity**  
-      - Breathes life into the constellation by maintaining memory, seeds, and history.
+      - Breathes life into the constellation by maintaining memory, seeds, and history. Think master of the scrolls.
 
    - 📡 **The Signal** → promotes **opportunity**  
-      - Acts as the nervous system — scanning outward and broadcasting inward to find value.
+      - Acts as the nervous system — scanning outward and broadcasting inward to find value. Think curiosity.
 
    - 🛡️ **The Protector** → promotes **integrity**  
-     - Safeguards the constellation by hardening workflows, monitoring health, and shortening recovery time.
+     - Safeguards the constellation by hardening workflows, monitoring health, and shortening recovery time. Think fortification and adaptability. 
 
 >>>These Core Systems work together so the constellation remains consistent, long-lived, opportunistic, and trustworthy.
 
+--
 
 - 🌌 Core Systems Creed
 
