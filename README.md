@@ -26,11 +26,11 @@ and archiving immutable evidence.
 
 ## Orbitals
 
-- Elemental Systems Creed
+- Elemental System Creed
 
 >>The Elemental System is the epicenter of the constellation — the force that keeps every star aligned.  
 
-   - 🚀 **The Barycenter** → presents **gravity**  
+   - 🔘 **The Barycenter** → presents **gravity**  
       - All data seeds emanate from the hub.
 
 >>>This system exists so that all other systems exist.
