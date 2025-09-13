@@ -26,6 +26,16 @@ and archiving immutable evidence.
 
 ## Orbitals
 
+- Elemental Systems Creed
+
+>>The Elemental System is the epicenter of the constellation — the force that keeps every star aligned.  
+
+   - 🚀 **The Barycenter** → presents **gravity**  
+      - All data seeds emanate from the hub.
+
+>>>This system exists so that all other systems exist.
+
+
 - 🌌 Core Systems Creed
 
 >>The Core Systems are the heartbeat of the constellation — the foundation that keeps every orbit aligned.  
@@ -45,6 +55,65 @@ Each system has a distinct mission:
 
 >>>These Core Systems work together so the constellation remains consistent, long-lived, opportunistic, and trustworthy.
 
+
+- 🌌 Core Systems Creed
+
+>>The Core Systems are the heartbeat of the constellation — the foundation that keeps every orbit aligned.  
+Each system has a distinct mission:
+
+   - 🚀 **The Launch** → promotes **consistency**  
+      - Ensures new suns are seeded with repeatable, reliable foundations.
+
+   - 🫀 **The Archive** → promotes **longevity**  
+      - Breathes life into the constellation by maintaining memory, seeds, and history.
+
+   - 📡 **The Signal** → promotes **opportunity**  
+      - Acts as the nervous system — scanning outward and broadcasting inward to find value.
+
+   - 🛡️ **The Protector** → promotes **integrity**  
+     - Safeguards the constellation by hardening workflows, monitoring health, and shortening recovery time.
+
+>>>These Core Systems work together so the constellation remains consistent, long-lived, opportunistic, and trustworthy.
+
+
+- 🌌 Core Systems Creed
+
+>>The Core Systems are the heartbeat of the constellation — the foundation that keeps every orbit aligned.  
+Each system has a distinct mission:
+
+   - 🚀 **The Launch** → promotes **consistency**  
+      - Ensures new suns are seeded with repeatable, reliable foundations.
+
+   - 🫀 **The Archive** → promotes **longevity**  
+      - Breathes life into the constellation by maintaining memory, seeds, and history.
+
+   - 📡 **The Signal** → promotes **opportunity**  
+      - Acts as the nervous system — scanning outward and broadcasting inward to find value.
+
+   - 🛡️ **The Protector** → promotes **integrity**  
+     - Safeguards the constellation by hardening workflows, monitoring health, and shortening recovery time.
+
+>>>These Core Systems work together so the constellation remains consistent, long-lived, opportunistic, and trustworthy.
+
+
+- 🌌 Core Systems Creed
+
+>>The Core Systems are the heartbeat of the constellation — the foundation that keeps every orbit aligned.  
+Each system has a distinct mission:
+
+   - 🚀 **The Launch** → promotes **consistency**  
+      - Ensures new suns are seeded with repeatable, reliable foundations.
+
+   - 🫀 **The Archive** → promotes **longevity**  
+      - Breathes life into the constellation by maintaining memory, seeds, and history.
+
+   - 📡 **The Signal** → promotes **opportunity**  
+      - Acts as the nervous system — scanning outward and broadcasting inward to find value.
+
+   - 🛡️ **The Protector** → promotes **integrity**  
+     - Safeguards the constellation by hardening workflows, monitoring health, and shortening recovery time.
+
+>>>These Core Systems work together so the constellation remains consistent, long-lived, opportunistic, and trustworthy.
 
 ## Assets
 
