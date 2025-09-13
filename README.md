@@ -25,7 +25,6 @@ and archiving immutable evidence.
 -**Developmental Funnels**
  - `scrolls/`: A collection of creative writing scrolls meant as a idea generator for the suitekeeper.
 
---
 
 ## Orbitals
 
@@ -38,6 +37,7 @@ and archiving immutable evidence.
 
 >>>This system exists so that all other systems exist.
 
+--
 
 - 🌌 Core Systems Creed
 
