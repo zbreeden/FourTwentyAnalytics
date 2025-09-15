@@ -98,4 +98,38 @@
     "checksum": "",
     "version": "1.0.0"
   }
+  {
+    "id": "2025-09-15T14:44:45Z-fourtwentyanalytics-polyglot-notebooks",
+    "ts_utc": "2025-09-15T14:44:45Z",
+    "date": "2025-09-15",
+    "module": "FourTwenty Analytics",
+    "repo": "fourtwentyanalytics",
+    "title": "Genesis Machine polyglot notebook initiated",
+    "summary": "This polyglot workbook with VS Code capabilities opens up a whole new world of prgramming language for FourTwenty Analytics.  This enables the genesis machine to be able build FourTwenty Analytics, literally, from the ground up in code.",
+    "tags": [
+      ".dib",
+      ".ipynb",
+      ".c#",
+      ".f#",
+      ".powershell",
+      ".sql"
+    ],
+    "rating": "critical",
+    "origin": {
+      "name": "FourTwenty Analytics",
+      "url": "https://zbreeden.github.io/FourTwentyAnalytics/",
+      "emoji": "🔘"
+    },
+    "links": {
+      "readme": "https://github.com/zbreeden/fourtwentyanalytics#readme",
+      "page": "https://zbreeden.github.io/fourtwentyanalytics/",
+      "data": "https://github.com/zbreeden/fourtwentyanalytics/tree/main/signals",
+      "runbook": "https://github.com/zbreeden/fourtwentyanalytics/blob/main/RUNBOOK.md"
+    },
+    "payload": {
+      "notes": "FourTwenty Analytics started with a blank polyglot workbook."
+    },
+    "checksum": "",
+    "version": "1.0.0"
+  }
 ]
