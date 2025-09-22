@@ -109,7 +109,7 @@ Each system has a distinct mission:
 >>>These Growth & Experiment stars work together so the constellation
 
 
-- 🌌 Ancillary Operations Creed
+- 🧩 Ancillary Operations Creed
 
 >>The ancillary operations system consists of stars that support metaphorical
 Each system has a distinct mission:
