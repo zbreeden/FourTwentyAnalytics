@@ -35,7 +35,7 @@ and archiving immutable evidence.
    - 🔘 **The Barycenter** → presents **gravity**  
       - All data seeds emanate from the hub.
 
->>>This system exists so that all other systems exist.
+>>>This center exists so that all other stars exist.
 
 --
 
@@ -59,68 +59,77 @@ Each star has a distinct mission:
    - ✨ **The Developer** → promotes **ideation**
      - Sparks new creations by shaping raw concepts into working modules, tools, and systems. Think genesis and invention.
 
->>>These Core Systems work together so the constellation remains consistent, long-lived, opportunistic, and trustworthy.
+>>>These Core stars work together so the constellation remains consistent, long-lived, opportunistic, and trustworthy.
 
 --
 
-- 🌌 Delivery & Insight Creed
+- 📈 Delivery & Insight Creed
 
->>The Core Systems are the heartbeat of the constellation — the foundation that keeps every orbit aligned.  
+>>The Delivery & Insight system consists of stars that support metaphorical 
 Each system has a distinct mission:
 
-   - 🚀 **The Launch** → promotes **consistency**  
-      - Ensures new suns are seeded with repeatable, reliable foundations.
+   - 🎨 **The Visualizer** → promotes ****  
+      - 
 
-   - 🫀 **The Archive** → promotes **longevity**  
-      - Breathes life into the constellation by maintaining memory, seeds, and history.
+   - ⚡ **The Catalyst** → promotes ****  
+      - 
 
-   - 📡 **The Signal** → promotes **opportunity**  
-      - Acts as the nervous system — scanning outward and broadcasting inward to find value.
+   - 🏦 **The Bank** → promotes ****  
+      - 
 
-   - 🛡️ **The Protector** → promotes **integrity**  
-     - Safeguards the constellation by hardening workflows, monitoring health, and shortening recovery time.
+   - 🧠 **The Evaluator** → promotes ****  
+      -
+     
+   - 📖 **The Story** → promotes ****  
+      -
 
->>>These Core Systems work together so the constellation remains consistent, long-lived, opportunistic, and trustworthy.
+>>>These Delivery & Insight stars work together so the constellation
 
 
 - 🌌 Growth & Experiment Creed
 
->>The Core Systems are the heartbeat of the constellation — the foundation that keeps every orbit aligned.  
+>>The Growth & Experiment system consists of stars that support metaphorical  
 Each system has a distinct mission:
 
-   - 🚀 **The Launch** → promotes **consistency**  
-      - Ensures new suns are seeded with repeatable, reliable foundations.
+   - 🌱 **The Grower** → promotes ****  
+      - 
 
-   - 🫀 **The Archive** → promotes **longevity**  
-      - Breathes life into the constellation by maintaining memory, seeds, and history.
+   - 🎮 **The Player** → promotes ****  
+      - 
 
-   - 📡 **The Signal** → promotes **opportunity**  
-      - Acts as the nervous system — scanning outward and broadcasting inward to find value.
+   - 🎲 **The Gambler** → promotes ****  
+      - 
 
-   - 🛡️ **The Protector** → promotes **integrity**  
-     - Safeguards the constellation by hardening workflows, monitoring health, and shortening recovery time.
+   - 🧭 **The Trainer** → promotes ****  
+     - 
 
->>>These Core Systems work together so the constellation remains consistent, long-lived, opportunistic, and trustworthy.
+   - 💪 **The Coach** → promotes ****  
+     - 
+
+>>>These Growth & Experiment stars work together so the constellation
 
 
 - 🌌 Ancillary Operations Creed
 
->>The Core Systems are the heartbeat of the constellation — the foundation that keeps every orbit aligned.  
+>>The ancillary operations system consists of stars that support metaphorical
 Each system has a distinct mission:
 
-   - 🚀 **The Launch** → promotes **consistency**  
-      - Ensures new suns are seeded with repeatable, reliable foundations.
+   - 🛰️ **The Orbiter** → promotes ****  
+      - 
 
-   - 🫀 **The Archive** → promotes **longevity**  
-      - Breathes life into the constellation by maintaining memory, seeds, and history.
+   - ⚓ **The Anchor** → promotes ****  
+      - 
 
-   - 📡 **The Signal** → promotes **opportunity**  
-      - Acts as the nervous system — scanning outward and broadcasting inward to find value.
+   - 🏢 **The Firm** → promotes **governance**  
+      - 
 
-   - 🛡️ **The Protector** → promotes **integrity**  
-     - Safeguards the constellation by hardening workflows, monitoring health, and shortening recovery time.
+   - 🪞 **The Mirror** → promotes **inner awareness**  
+     - 
 
->>>These Core Systems work together so the constellation remains consistent, long-lived, opportunistic, and trustworthy.
+  - 💰 **The Accountant** → promotes **fiscal responsibility**  
+     - 
+
+>>>These ancillary operation stars work together so the constellation
 
 ## Assets
 
