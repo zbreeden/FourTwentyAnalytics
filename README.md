@@ -421,6 +421,7 @@ items:
 
 status_icons:
   seed: "🌱"
+  sprout: "🌿"
   active: "🟢"
   pending: "🟡"
   error: "🔴"
@@ -445,7 +446,6 @@ tech_icons:
   yaml: "📄"
   json: "🔧"
   sql: "🗃️"
-  git: "🌿"
   docker: "📦"
   aws: "☁️"
 ```
