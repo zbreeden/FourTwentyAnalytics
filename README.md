@@ -292,6 +292,28 @@ items:
 
 --> schema/orbits.schema.yml <--
 
+$schema: "https://json-schema.org/draft/2020-12/schema"
+title: "orbits.yml schema"
+type: array
+items:
+  type: object
+  additionalProperties: false
+  required: [id, label, emoji, order]
+  properties:
+    id:
+      type: string
+      pattern: "^[a-z0-9_]+$"
+    label:
+      type: string
+      minLength: 1
+    emoji:
+      type: string
+      minLength: 1
+    order:
+      type: integer
+      minimum: 0
+    description:
+      type: string
 
 ## Seeds
 
@@ -349,6 +371,10 @@ items:
   deprecated: false
 
 Notes: Keep tags.yml intentionally smaller than glossary.yml; use it as the cross-module “integration surface.” When in doubt, put specifics in the glossary and map them to a broader tag via gloss_ref.
+
+--> seeds/orbits.yml <--
+
+
 
 ## Signals
 
