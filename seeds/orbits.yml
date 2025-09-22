@@ -1,6 +1,6 @@
 - id: elemental-system
   label: "Elemental System"
-  emoji: "⚛️"
+  emoji: "☀️"
   order: 0
   meaning: "The hub repo housing primitives—seeds, artifacts, README, and public index."
   scope:
