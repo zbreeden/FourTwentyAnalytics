@@ -610,6 +610,12 @@ allOf:
       required: [owner]
 ```
 
+### schemas/seedset.schema.yml
+
+```yaml
+
+```
+
 ## Seeds
 
 ### seeds/glossary.yml
@@ -944,6 +950,14 @@ funnels:
   pages_url: https://zbreeden.github.io/archive-model/
   owners: [zach]
 ```
+
+### seeds/seedset.yml
+
+```yaml
+
+```
+
+## Modules
 
 ## Signals
 
