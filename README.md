@@ -610,66 +610,6 @@ allOf:
       required: [owner]
 ```
 
-### schema/registry.schema.yml
-
-```yaml
-$schema: "https://json-schema.org/draft/2020-12/schema"
-title: "registry.yml schema"
-type: object
-additionalProperties: false
-required: [version, default_seeds, repos]
-
-properties:
-  version:
-    type: integer
-    minimum: 1
-
-  default_seeds:
-    $ref: "#/$defs/seedMap"
-
-  repos:
-    type: array
-    minItems: 1
-    items:
-      $ref: "#/$defs/repoSpec"
-
-$defs:
-  seedEntry:
-    type: object
-    additionalProperties: false
-    required: [path, schema, required]
-    properties:
-      path:
-        type: string
-        pattern: "^(seeds|schema)/[A-Za-z0-9._/\\-]+\\.(ya?ml)$"
-      schema:
-        type: string
-        pattern: "^schema/[A-Za-z0-9._/\\-]+\\.(ya?ml)$"
-      required:
-        type: boolean
-
-  seedMap:
-    type: object
-    additionalProperties: false
-    minProperties: 1
-    patternProperties:
-      "^[a-z0-9_]+$": { $ref: "#/$defs/seedEntry" }
-
-  repoSpec:
-    type: object
-    additionalProperties: false
-    required: [owner, name, seeds]
-    properties:
-      owner:
-        type: string
-        pattern: "^[A-Za-z0-9][A-Za-z0-9-]{0,38}$"
-      name:
-        type: string
-        pattern: "^[A-Za-z0-9._-]+$"
-      seeds:
-        $ref: "#/$defs/seedMap"
-```
-
 ## Seeds
 
 ### seeds/glossary.yml
@@ -962,46 +902,6 @@ funnels:
 ```
 
 ### seeds/modules.yml
-
-```yaml
-# Field descriptions:
-# - id: Unique identifier in snake_case. Stable key for cross-linking across seeds and schemas.
-# - name: Human-readable module name. May include nickname or role in parentheses for clarity.
-# - emoji: Visual identifier. Single Unicode character representing the module in dashboards, UIs, and diagrams.
-# - orbit: System orbit classification. One of [core|elemental-system|auxiliary|delivery|evaluation|firm] describing the module’s placement in the constellation.
-# - status: Lifecycle state of the module. Current value aligned to statuses.yml (e.g., seed, sprout, active, dormant).
-# - tags: Array of topical keywords. Used for categorization, filtering, and search across modules.
-# - glyphs: Array of symbolic markers. Cross-links to glyph definitions for visual and conceptual grouping.
-# - repo_url: GitHub repository URL. Canonical codebase location for the module.
-# - pages_url: GitHub Pages URL. Public-facing demo or documentation site for the module.
-# - owners: Array of maintainer IDs. References to individuals or teams responsible for the module.
-
-- id: fourtwenty_analytics
-  name: FourTwenty Analytics (The Barycenter)
-  emoji: "🔘"
-  orbit: elemental-system
-  status: active
-  tags: [hub, seeds, portfolio, index]
-  glyphs: [hub]
-  repo_url: https://github.com/zbreeden/FourTwentyAnalytics
-  pages_url: https://zbreeden.github.io/FourTwentyAnalytics/
-  owners: [zach]
-
-# ── Core Systems ────────────────────────────────────────────────────────────────
-
-- id: archive_model
-  name: Archive Model
-  emoji: "🫀"
-  orbit: core
-  status: active
-  tags: [records, glossary, tags, statuses]
-  glyphs: [archive, hub, signal]
-  repo_url: https://github.com/zbreeden/archive-model
-  pages_url: https://zbreeden.github.io/archive-model/
-  owners: [zach]
-```
-
-### seeds/registry.yml
 
 ```yaml
 # Field descriptions:
