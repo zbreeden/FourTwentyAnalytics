@@ -37,6 +37,9 @@ glyph_icons:
   firm: "🏢"
   mirror: "🪞"
   fourtwentyanalytics: "🔘"
+  developer: "✨"
+  protector: "🛡️"
+  accountant: "💰"
 
 tech_icons:
   python: "🐍"
