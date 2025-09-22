@@ -12,7 +12,7 @@ files:
   - signals/latest.json
   - schema/emoji_palette.schema.yml
   - schema/funnel_spec.schema.yml
-  - schema/funnel_spec.yml
+  - seeds/funnel_spec.yml
   - schema/glossary.schema.yml
   - schema/latest.schema.yml
   - schema/modules.schema.yml
