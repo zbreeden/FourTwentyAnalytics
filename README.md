@@ -26,110 +26,114 @@ and archiving immutable evidence.
  - `scrolls/`: A collection of creative writing scrolls meant for ideation.
 
 
-## Orbitals
+## Orbitals  
 
-- Elemental System Creed
+### ☀️ Elemental System Creed  
 
->> ☀️ The Elemental System is the epicenter of the constellation — the force that keeps every star aligned.  
+>>The Elemental System is the epicenter of the constellation — the force that keeps every star aligned.  
 
    - 🔘 **The Barycenter** → presents **gravity**  
-      - All data seeds emanate from the hub.
+      - All data seeds emanate from the hub.  
 
->>>This center exists so that all other stars exist.
+>>>This center exists so that all other stars exist.  
 
---
+---
 
-- 🪐 Core System Creed
+### 🪐 Core System Creed  
 
 >>The Core System consists of the stars that support metaphorical life for the constellation — the foundation that keeps every other orbit aligned.  
-Each star has a distinct mission:
+Each star has a distinct mission:  
 
    - 🚀 **The Launch** → promotes **consistency**  
-      - Ensures new suns are seeded with repeatable, reliable foundations. Think genetic normalization.
+      - Ensures new suns are seeded with repeatable, reliable foundations. Think genetic normalization.  
 
    - 🫀 **The Archive** → promotes **longevity**  
-      - Breathes life into the constellation by maintaining memory, seeds, and history. Think master of the scrolls.
+      - Breathes life into the constellation by maintaining memory, seeds, and history. Think master of the scrolls.  
 
    - 📡 **The Signal** → promotes **opportunity**  
-      - Acts as the nervous system — scanning outward and broadcasting inward to find value. Think curiosity.
+      - Acts as the nervous system — scanning outward and broadcasting inward to find value. Think curiosity.  
 
    - 🛡️ **The Protector** → promotes **integrity**  
-     - Safeguards the constellation by hardening workflows, monitoring health, and shortening recovery time. Think fortification and adaptability.
+      - Safeguards the constellation by hardening workflows, monitoring health, and shortening recovery time. Think fortification and adaptability.  
 
-   - ✨ **The Developer** → promotes **ideation**
-     - Sparks new creations by shaping raw concepts into working modules, tools, and systems. Think genesis and invention.
+   - ✨ **The Developer** → promotes **ideation**  
+      - Sparks new creations by shaping raw concepts into working modules, tools, and systems. Think genesis and invention.  
 
->>>These Core stars work together so the constellation remains consistent, long-lived, opportunistic, and trustworthy.
+>>>These Core stars work together so the constellation remains consistent, long-lived, opportunistic, and trustworthy.  
 
---
+---
 
-- 📈 Delivery & Insight Creed
+### 📈 Delivery & Insight Creed  
 
->>The Delivery & Insight system consists of stars that support metaphorical 
-Each system has a distinct mission:
+>>The Delivery & Insight system consists of stars that translate data into meaning and action — the storytellers of the constellation.  
+Each system has a distinct mission:  
 
-   - 🎨 **The Visualizer** → promotes ****  
-      - 
+   - 🎨 **The Visualizer** → promotes **clarity**  
+      - Paints data into patterns stakeholders can immediately grasp. Think canvas and gallery.  
 
-   - ⚡ **The Catalyst** → promotes ****  
-      - 
+   - ⚡ **The Catalyst** → promotes **transformation**  
+      - Accelerates change by turning insights into operational improvements. Think spark that ignites.  
 
-   - 🏦 **The Bank** → promotes ****  
-      - 
+   - 🏦 **The Bank** → promotes **stewardship**  
+      - Safeguards outputs and provides dashboards of record. Think vault of truth.  
 
-   - 🧠 **The Evaluator** → promotes ****  
-      -
-     
-   - 📖 **The Story** → promotes ****  
-      -
+   - 🧠 **The Evaluator** → promotes **judgment**  
+      - Weighs outcomes, models, and assumptions for sound decision-making. Think wisdom keeper.  
 
->>>These Delivery & Insight stars work together so the constellation
+   - 📖 **The Story** → promotes **narrative**  
+      - Threads insights into human language that compels and convinces. Think bard of the constellation.  
 
+>>>These Delivery & Insight stars work together so the constellation always communicates clearly, acts decisively, and preserves trusted outcomes.  
 
-- 🧪 Growth & Experiment Creed
+---
 
->>The Growth & Experiment system consists of stars that support metaphorical  
-Each system has a distinct mission:
+### 🧪 Growth & Experiment Creed  
 
-   - 🌱 **The Grower** → promotes ****  
-      - 
+>>The Growth & Experiment system consists of stars that push boundaries — where the constellation tests, plays, and evolves.  
+Each system has a distinct mission:  
 
-   - 🎮 **The Player** → promotes ****  
-      - 
+   - 🌱 **The Grower** → promotes **cultivation**  
+      - Nurtures seeds and modules to maturity. Think gardener’s hand.  
 
-   - 🎲 **The Gambler** → promotes ****  
-      - 
+   - 🎮 **The Player** → promotes **immersion**  
+      - Creates interactive spaces for experimentation. Think simulation and play.  
 
-   - 🧭 **The Trainer** → promotes ****  
-     - 
+   - 🎲 **The Gambler** → promotes **risk & probability**  
+      - Models chance, odds, and uncertainty to explore outcomes. Think dice on the table.  
 
-   - 💪 **The Coach** → promotes ****  
-     - 
+   - 🧭 **The Trainer** → promotes **discipline**  
+      - Sharpens skills and tracks progress across learning journeys. Think compass for growth.  
 
->>>These Growth & Experiment stars work together so the constellation
+   - 💪 **The Coach** → promotes **resilience**  
+      - Builds habits, routines, and accountability. Think steady motivator.  
 
+>>>These Growth & Experiment stars work together so the constellation continuously learns, adapts, and expands its horizons.  
 
-- 🧩 Ancillary Operations Creed
+---
 
->>The ancillary operations system consists of stars that support metaphorical
-Each system has a distinct mission:
+### 🧩 Ancillary Operations Creed  
 
-   - 🛰️ **The Orbiter** → promotes ****  
-      - 
+>>The Ancillary Operations system consists of stars that provide structure and support — the quiet strength beneath the constellation.  
+Each system has a distinct mission:  
 
-   - ⚓ **The Anchor** → promotes ****  
-      - 
+   - 🛰️ **The Orbiter** → promotes **perspective**  
+      - Circles the constellation, observing from distance and relaying balance. Think satellite eye.  
+
+   - ⚓ **The Anchor** → promotes **stability**  
+      - Grounds the constellation when drift threatens alignment. Think ballast in the deep.  
 
    - 🏢 **The Firm** → promotes **governance**  
-      - 
+      - Establishes rules, policies, and accountability. Think law of the land.  
 
    - 🪞 **The Mirror** → promotes **inner awareness**  
-     - 
+      - Reflects strengths and weaknesses to guide improvement. Think honest reflection.  
 
-  - 💰 **The Accountant** → promotes **fiscal responsibility**  
-     - 
+   - 💰 **The Accountant** → promotes **fiscal responsibility**  
+      - Tracks resources, costs, and returns. Think ledger of sustainability.  
 
->>>These ancillary operation stars work together so the constellation
+>>>These Ancillary Operation stars work together so the constellation remains stable, governed, and sustainable across every orbit.  
+
+---
 
 ## Assets
 
