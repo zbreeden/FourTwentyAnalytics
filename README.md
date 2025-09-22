@@ -449,41 +449,95 @@ $defs:
         minItems: 1
         items: { $ref: "#/$defs/stepSpec" }
 ```
+
 ### schema/latest.schema.yml
 
 ```yaml
-$schema: "https://json-schema.org/draft/2020-12/schema"
-title: "statuses seed"
-type: array
-items:
-  type: object
-  additionalProperties: false
-  required: [id, label, emoji, order, meaning, criteria, allowed_next]
-  properties:
-    id:
+# schema/latest.schema.yml
+title: "latest.json schema"
+type: object
+additionalProperties: false
+
+required:
+  - id
+  - ts_utc
+  - module
+  - repo
+  - title
+  - summary
+  - rating
+  - origin
+  - links
+  - payload
+
+properties:
+  id:
+    type: string
+    description: "Globally unique id, e.g. YYYYMMDDTHHMMSSZ-<repo>-<slug>"
+    pattern: "^[a-z0-9\\-T:Z_]+$"
+  ts_utc:
+    type: string
+    format: date-time
+    description: "UTC timestamp when this broadcast was created"
+  date:
+    type: string
+    description: "Convenience YYYY-MM-DD derived from ts_utc"
+    pattern: "^\\d{4}-\\d{2}-\\d{2}$"
+  module:
+    type: string
+    description: "Human-facing module/sun name, e.g. The Signal"
+  repo:
+    type: string
+    description: "Repo slug, e.g. signal-model"
+    pattern: "^[a-z0-9\\-]+$"
+  title:
+    type: string
+  summary:
+    type: string
+  tags:
+    type: array
+    items:
       type: string
-      pattern: "^[a-z0-9_]+$"
-    label:
-      type: string
-      minLength: 1
-    emoji:
-      type: string
-      minLength: 1
-    order:
-      type: integer
-      minimum: 0
-    meaning:
-      type: string
-      minLength: 1
-    criteria:
-      type: array
-      items: { type: string }
-    allowed_next:
-      type: array
-      items: { type: string }
+  rating:
+    type: string
+    enum: [critical, high, normal, mundane]
+    description: "Broadcast severity/importance"
+  origin:
+    type: object
+    additionalProperties: false
+    required: [name, url, emoji]
+    properties:
+      name:
+        type: string
+        description: "Branding block title, e.g. FourTwenty Analytics"
+      url:
+        type: string
+        description: "Canonical page for this module/repo"
+      emoji:
+        type: string
+        description: "Single emoji glyph for the module"
+  links:
+    type: object
+    additionalProperties: false
+    properties:
+      readme:
+        type: string
+      page:
+        type: string
+      data:
+        type: string
+      runbook:
+        type: string
+  payload:
+    type: object
+    description: "Free-form JSON payload for module-specific details"
+  checksum:
+    type: string
+    description: "Optional content hash for integrity checks"
+  version:
+    type: string
+    description: "Semantic version of this broadcast schema/content"
 ```
-
-
 
 ## Seeds
 
@@ -719,6 +773,36 @@ funnels:
         next: ["success", "failure", "cancelled", "timed_out"]
         sla: { max_minutes_in_step: 20 }
 ```
+
+### seeds/seed.latest.json
+
+```yaml
+# Field descriptions:
+# - id: Unique identifier in snake_case. Stable reference for cross-linking and validation.
+# - label: Human-readable name (Title Case). Display-friendly status name for UI and reports.
+# - emoji: Visual identifier. Single Unicode character for status representation in dashboards and workflows.
+# - order: Sort order. Integer for consistent status progression and lifecycle visualization.
+# - meaning: Purpose and high-level description of the status. One-sentence summary of what this status represents in the module lifecycle.
+# - criteria: Specific requirements and conditions. Array of measurable conditions that must be met to achieve this status.
+# - allowed_next: Valid status transitions. Array of status IDs that can follow this status in the workflow progression.
+
+- id: seed
+  label: "Seed"
+  emoji: "🌱"
+  order: 01
+  meaning: "Idea captured; repo exists; README stub."
+  criteria: ["repo_created", "readme_stub"]
+  allowed_next: ["sprout"]
+
+- id: sprout
+  label: "Sprout"
+  emoji: "🌿"
+  order: 02
+  meaning: "Scaffold working; basic demo or notebook runs."
+  criteria: ["scaffold_ready", "seeds_defined", "hello_world_demo"]
+  allowed_next: ["budding", "dormant"]
+```
+
 
 ## Signals
 
