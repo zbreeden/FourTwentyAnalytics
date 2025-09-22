@@ -614,21 +614,34 @@ tech_icons:
 # - criteria: Specific requirements and conditions. Array of measurable conditions that must be met to achieve this status.
 # - allowed_next: Valid status transitions. Array of status IDs that can follow this status in the workflow progression.
 
-- id: seed
-  label: "Seed"
-  emoji: "🌱"
-  order: 01
-  meaning: "Idea captured; repo exists; README stub."
-  criteria: ["repo_created", "readme_stub"]
-  allowed_next: ["sprout"]
+version: 1
+defaults:
+  timezone: "UTC"
+  sla:
+    breach_severity: warn         # warn | error
+    breach_tag: "sla_breach"      # tag your validator can emit
+  metrics:
+    # your validator can compute these from timestamps it sees in data
+    - id: lead_time_days
+      description: "Time from first funnel step to first steady_state step"
+    - id: cycle_time_days
+      description: "Time spent between non-terminal steps (excludes paused/dormant)"
+    - id: time_in_step_days
+      description: "Per-step dwell time"
 
-- id: sprout
-  label: "Sprout"
-  emoji: "🌿"
-  order: 02
-  meaning: "Scaffold working; basic demo or notebook runs."
-  criteria: ["scaffold_ready", "seeds_defined", "hello_world_demo"]
-  allowed_next: ["budding", "dormant"]
+funnels:
+  # ---------------------------------------------------------------------------
+  - id: launch_lifecycle
+    label: "Module Lifecycle"
+    entity: "module"
+    key_field: "status"    # your modules.yml uses these keys
+    description: "End-to-end lifecycle for constellation modules (FourTwenty)."
+    steps:
+      - id: queued
+        label: "Queued"
+        requires: ["proposal_issue_open", "rough_tshirt_size"]
+        next: ["seed", "scoped"]
+        sla: { max_days_in_step: 14, breach_severity: warn }
 ```
 
 ## Signals
