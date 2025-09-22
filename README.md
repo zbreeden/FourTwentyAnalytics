@@ -86,7 +86,7 @@ Each system has a distinct mission:
 >>>These Delivery & Insight stars work together so the constellation
 
 
-- 🌌 Growth & Experiment Creed
+- 🧪 Growth & Experiment Creed
 
 >>The Growth & Experiment system consists of stars that support metaphorical  
 Each system has a distinct mission:
