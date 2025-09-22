@@ -374,6 +374,13 @@ Notes: Keep tags.yml intentionally smaller than glossary.yml; use it as the cros
 
 --> seeds/orbits.yml <--
 
+# id: 
+# label: 
+# emoji:
+# order:
+# description:
+
+
 
 
 ## Signals
