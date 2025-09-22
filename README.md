@@ -614,71 +614,60 @@ allOf:
 
 ```yaml
 $schema: "https://json-schema.org/draft/2020-12/schema"
-title: "modules.yml schema"
-type: array
-items:
-  type: object
-  additionalProperties: false
-  required: [key, repo, orbit, status]
-  properties:
-    key:
-      type: string
-      pattern: "^[a-z0-9_]+$"
-      description: "Stable snake_case module key"
-    label:
-      type: string
-      minLength: 1
-    repo:
-      type: string
-      pattern: "^[A-Za-z0-9._-]+$"
-      description: "Repository name (e.g., bank-model)"
-    owner:
-      type: string
-      pattern: "^[A-Za-z0-9-]{1,39}$"
-      description: "GitHub owner/org (optional if full_name used)"
-    full_name:
-      type: string
-      pattern: "^[A-Za-z0-9-]{1,39}/[A-Za-z0-9._-]+$"
-      description: "owner/repo (optional alternative to owner+repo)"
-    orbit:
-      type: string
-      pattern: "^[a-z0-9_]+$"
-    status:
-      type: string
-      pattern: "^[a-z0-9_]+$"
-    emoji:
-      type: string
-      minLength: 1
-    live_url:
-      type: string
-      pattern: "^https?://.+"
-    description:
-      type: string
-    tags:
-      type: array
-      items:
+title: "registry.yml schema"
+type: object
+additionalProperties: false
+required: [version, default_seeds, repos]
+
+properties:
+  version:
+    type: integer
+    minimum: 1
+
+  default_seeds:
+    $ref: "#/$defs/seedMap"
+
+  repos:
+    type: array
+    minItems: 1
+    items:
+      $ref: "#/$defs/repoSpec"
+
+$defs:
+  seedEntry:
+    type: object
+    additionalProperties: false
+    required: [path, schema, required]
+    properties:
+      path:
         type: string
-        pattern: "^[a-z0-9_]+$"
-    contacts:
-      type: array
-      items:
+        pattern: "^(seeds|schema)/[A-Za-z0-9._/\\-]+\\.(ya?ml)$"
+      schema:
         type: string
-        minLength: 1
-    created_at:
-      type: string
-      pattern: "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
-      description: "ISO8601 UTC, e.g. 2025-09-09T12:34:56Z"
-    updated_at:
-      type: string
-      pattern: "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
-allOf:
-  - if:
-      properties:
-        full_name: { type: string }
-    then:
-      properties: {}
-    else:
-      required: [owner]
+        pattern: "^schema/[A-Za-z0-9._/\\-]+\\.(ya?ml)$"
+      required:
+        type: boolean
+
+  seedMap:
+    type: object
+    additionalProperties: false
+    minProperties: 1
+    patternProperties:
+      "^[a-z0-9_]+$": { $ref: "#/$defs/seedEntry" }
+
+  repoSpec:
+    type: object
+    additionalProperties: false
+    required: [owner, name, seeds]
+    properties:
+      owner:
+        type: string
+        pattern: "^[A-Za-z0-9][A-Za-z0-9-]{0,38}$"
+      name:
+        type: string
+        pattern: "^[A-Za-z0-9._-]+$"
+      seeds:
+        $ref: "#/$defs/seedMap"
 ```
 
 ## Seeds
@@ -973,6 +962,46 @@ funnels:
 ```
 
 ### seeds/modules.yml
+
+```yaml
+# Field descriptions:
+# - id: Unique identifier in snake_case. Stable key for cross-linking across seeds and schemas.
+# - name: Human-readable module name. May include nickname or role in parentheses for clarity.
+# - emoji: Visual identifier. Single Unicode character representing the module in dashboards, UIs, and diagrams.
+# - orbit: System orbit classification. One of [core|elemental-system|auxiliary|delivery|evaluation|firm] describing the module’s placement in the constellation.
+# - status: Lifecycle state of the module. Current value aligned to statuses.yml (e.g., seed, sprout, active, dormant).
+# - tags: Array of topical keywords. Used for categorization, filtering, and search across modules.
+# - glyphs: Array of symbolic markers. Cross-links to glyph definitions for visual and conceptual grouping.
+# - repo_url: GitHub repository URL. Canonical codebase location for the module.
+# - pages_url: GitHub Pages URL. Public-facing demo or documentation site for the module.
+# - owners: Array of maintainer IDs. References to individuals or teams responsible for the module.
+
+- id: fourtwenty_analytics
+  name: FourTwenty Analytics (The Barycenter)
+  emoji: "🔘"
+  orbit: elemental-system
+  status: active
+  tags: [hub, seeds, portfolio, index]
+  glyphs: [hub]
+  repo_url: https://github.com/zbreeden/FourTwentyAnalytics
+  pages_url: https://zbreeden.github.io/FourTwentyAnalytics/
+  owners: [zach]
+
+# ── Core Systems ────────────────────────────────────────────────────────────────
+
+- id: archive_model
+  name: Archive Model
+  emoji: "🫀"
+  orbit: core
+  status: active
+  tags: [records, glossary, tags, statuses]
+  glyphs: [archive, hub, signal]
+  repo_url: https://github.com/zbreeden/archive-model
+  pages_url: https://zbreeden.github.io/archive-model/
+  owners: [zach]
+```
+
+### seeds/registry.yml
 
 ```yaml
 # Field descriptions:
