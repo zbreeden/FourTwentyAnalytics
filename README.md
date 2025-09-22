@@ -30,7 +30,7 @@ and archiving immutable evidence.
 
 - Elemental System Creed
 
->> ⚛️ The Elemental System is the epicenter of the constellation — the force that keeps every star aligned.  
+>> ☀️ The Elemental System is the epicenter of the constellation — the force that keeps every star aligned.  
 
    - 🔘 **The Barycenter** → presents **gravity**  
       - All data seeds emanate from the hub.
@@ -54,7 +54,10 @@ Each star has a distinct mission:
       - Acts as the nervous system — scanning outward and broadcasting inward to find value. Think curiosity.
 
    - 🛡️ **The Protector** → promotes **integrity**  
-     - Safeguards the constellation by hardening workflows, monitoring health, and shortening recovery time. Think fortification and adaptability. 
+     - Safeguards the constellation by hardening workflows, monitoring health, and shortening recovery time. Think fortification and adaptability.
+
+   - ✨ **The Developer** → promotes **ideation**
+     - Sparks new creations by shaping raw concepts into working modules, tools, and systems. Think genesis and invention.
 
 >>>These Core Systems work together so the constellation remains consistent, long-lived, opportunistic, and trustworthy.
 
