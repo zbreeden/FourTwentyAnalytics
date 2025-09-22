@@ -327,6 +327,40 @@ items:
       items: { type: string }
 ```
 
+### schema/funnel_spec.schema.yml
+
+```yaml
+$schema: "https://json-schema.org/draft/2020-12/schema"
+title: "statuses seed"
+type: array
+items:
+  type: object
+  additionalProperties: false
+  required: [id, label, emoji, order, meaning, criteria, allowed_next]
+  properties:
+    id:
+      type: string
+      pattern: "^[a-z0-9_]+$"
+    label:
+      type: string
+      minLength: 1
+    emoji:
+      type: string
+      minLength: 1
+    order:
+      type: integer
+      minimum: 0
+    meaning:
+      type: string
+      minLength: 1
+    criteria:
+      type: array
+      items: { type: string }
+    allowed_next:
+      type: array
+      items: { type: string }
+```
+
 ## Seeds
 
 ### seeds/glossary.yml
