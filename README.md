@@ -39,7 +39,7 @@ and archiving immutable evidence.
 
 --
 
-- 🌌 Core System Creed
+- 🪐 Core System Creed
 
 >>The Core System consists of the stars that support metaphorical life for the constellation — the foundation that keeps every other orbit aligned.  
 Each star has a distinct mission:
