@@ -331,34 +331,123 @@ items:
 
 ```yaml
 $schema: "https://json-schema.org/draft/2020-12/schema"
-title: "statuses seed"
-type: array
-items:
-  type: object
-  additionalProperties: false
-  required: [id, label, emoji, order, meaning, criteria, allowed_next]
-  properties:
-    id:
-      type: string
-      pattern: "^[a-z0-9_]+$"
-    label:
-      type: string
-      minLength: 1
-    emoji:
-      type: string
-      minLength: 1
-    order:
-      type: integer
-      minimum: 0
-    meaning:
-      type: string
-      minLength: 1
-    criteria:
-      type: array
-      items: { type: string }
-    allowed_next:
-      type: array
-      items: { type: string }
+title: "funnel_spec.yml schema"
+type: object
+additionalProperties: false
+required: [version, funnels]
+
+properties:
+  version:
+    type: integer
+    minimum: 1
+
+  defaults:
+    type: object
+    additionalProperties: false
+    properties:
+      timezone:
+        type: string
+        # Keep this permissive (IANA e.g., "UTC", "America/New_York")
+        pattern: "^[A-Za-z0-9_+./-]+$"
+      sla:
+        $ref: "#/$defs/slaSpec"
+      metrics:
+        type: array
+        items:
+          type: object
+          additionalProperties: false
+          required: [id, description]
+          properties:
+            id:
+              $ref: "#/$defs/snakeId"
+            description:
+              type: string
+              minLength: 1
+
+  funnels:
+    type: array
+    minItems: 1
+    items:
+      $ref: "#/$defs/funnelSpec"
+
+$defs:
+  snakeId:
+    type: string
+    pattern: "^[a-z0-9_]+$"
+
+  slaSpec:
+    type: object
+    additionalProperties: false
+    properties:
+      # At least one max_* should be provided when SLA is present
+      max_days_in_step:
+        type: integer
+        minimum: 0
+      max_hours_in_step:
+        type: integer
+        minimum: 0
+      max_minutes_in_step:
+        type: integer
+        minimum: 0
+      breach_severity:
+        type: string
+        enum: [warn, error]
+      breach_tag:
+        $ref: "#/$defs/snakeId"
+    anyOf:
+      - required: [max_days_in_step]
+      - required: [max_hours_in_step]
+      - required: [max_minutes_in_step]
+
+  stepSpec:
+    type: object
+    additionalProperties: false
+    required: [id, label]
+    properties:
+      id:        { $ref: "#/$defs/snakeId" }
+      label:     { type: string, minLength: 1 }
+      description: { type: string }
+      requires:
+        type: array
+        items: { type: string, minLength: 1 }
+      next:
+        type: array
+        items: { $ref: "#/$defs/snakeId" }
+      exit_to:
+        type: array
+        items: { $ref: "#/$defs/snakeId" }
+      steady_state: { type: boolean }
+      terminal:     { type: boolean }
+      urgent:       { type: boolean }
+      remediation:
+        type: array
+        items: { type: string, minLength: 1 }
+      sla:
+        $ref: "#/$defs/slaSpec"
+    allOf:
+      # Prevent a step from being both steady_state and terminal
+      - not:
+          allOf:
+            - required: [steady_state]
+            - required: [terminal]
+            - properties:
+                steady_state: { const: true }
+                terminal:     { const: true }
+
+  funnelSpec:
+    type: object
+    additionalProperties: false
+    required: [id, label, entity, steps]
+    properties:
+      id:         { $ref: "#/$defs/snakeId" }
+      label:      { type: string, minLength: 1 }
+      entity:     { type: string, minLength: 1 }
+      key_field:  { type: string, minLength: 1 }
+      description:{ type: string }
+      steps:
+        type: array
+        minItems: 1
+        items: { $ref: "#/$defs/stepSpec" }
 ```
 
 ## Seeds
@@ -485,6 +574,35 @@ tech_icons:
 ```
 
 ### seeds/statuses.yml
+
+```yaml
+# Field descriptions:
+# - id: Unique identifier in snake_case. Stable reference for cross-linking and validation.
+# - label: Human-readable name (Title Case). Display-friendly status name for UI and reports.
+# - emoji: Visual identifier. Single Unicode character for status representation in dashboards and workflows.
+# - order: Sort order. Integer for consistent status progression and lifecycle visualization.
+# - meaning: Purpose and high-level description of the status. One-sentence summary of what this status represents in the module lifecycle.
+# - criteria: Specific requirements and conditions. Array of measurable conditions that must be met to achieve this status.
+# - allowed_next: Valid status transitions. Array of status IDs that can follow this status in the workflow progression.
+
+- id: seed
+  label: "Seed"
+  emoji: "🌱"
+  order: 01
+  meaning: "Idea captured; repo exists; README stub."
+  criteria: ["repo_created", "readme_stub"]
+  allowed_next: ["sprout"]
+
+- id: sprout
+  label: "Sprout"
+  emoji: "🌿"
+  order: 02
+  meaning: "Scaffold working; basic demo or notebook runs."
+  criteria: ["scaffold_ready", "seeds_defined", "hello_world_demo"]
+  allowed_next: ["budding", "dormant"]
+```
+
+### seeds/funnel_spec.yml
 
 ```yaml
 # Field descriptions:
