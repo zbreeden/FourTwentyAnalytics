@@ -94,7 +94,7 @@
 
 - id: ancillary-operations
   label: "Ancillary Operations"
-  emoji: "🛰️"
+  emoji: "🧩"
   order: 40
   meaning: "Operational plumbing: automation, CI/CD, governance, and reliability."
   scope:
