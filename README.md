@@ -381,6 +381,28 @@ Notes: Keep tags.yml intentionally smaller than glossary.yml; use it as the cros
 # description:
 
 
+- id: elemental-system
+  label: "Elemental System"
+  emoji: "☀️"
+  order: 0
+  meaning: "The hub repo housing primitives—seeds, artifacts, README, and public index."
+  scope:
+    - "Hub README.md and index.html (portfolio entry)"
+    - "Canonical seed definitions (glossary.yml, tags.yml, statuses.yml, orbits.yml, registry.yml)"
+    - "Shared assets, scaffolds, and templates"
+    - "Governance notes and contribution guidelines"
+  includes:
+    - repo: "FourTwentyAnalytics"  # 🔘 barycenter & suitekeeper
+  kpis:
+    - "Seed schema validity (lint/CI passing)"
+    - "Cross-repo seed compliance rate"
+    - "Hub uptime and README freshness"
+    - "Index render health (README/Pages load without errors)"
+  policies:
+    - "Schema changes require version bump and migration notes"
+    - "Hub remains public; CI must pass before merge"
+    - "Backwards-compatible deprecations for seed keys"
+  see_also: ["core", "delivery-insight", "growth-experiment", "orbit-ops"]
 
 
 ## Signals
