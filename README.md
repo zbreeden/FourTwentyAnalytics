@@ -23,7 +23,7 @@ and archiving immutable evidence.
  - `.github/workflows/validate_seeds.yml`: validates seed structures against schemas.
 
 -**Developmental Funnels**
- - `scrolls/`: A collection of creative writing scrolls meant as a idea generator for the suitekeeper.
+ - `scrolls/`: A collection of creative writing scrolls meant for ideation.
 
 
 ## Orbitals
@@ -60,7 +60,7 @@ Each star has a distinct mission:
 
 --
 
-- 🌌 Core Systems Creed
+- 🌌 Delivery & Insight Creed
 
 >>The Core Systems are the heartbeat of the constellation — the foundation that keeps every orbit aligned.  
 Each system has a distinct mission:
@@ -80,7 +80,7 @@ Each system has a distinct mission:
 >>>These Core Systems work together so the constellation remains consistent, long-lived, opportunistic, and trustworthy.
 
 
-- 🌌 Core Systems Creed
+- 🌌 Growth & Experiment Creed
 
 >>The Core Systems are the heartbeat of the constellation — the foundation that keeps every orbit aligned.  
 Each system has a distinct mission:
@@ -100,7 +100,7 @@ Each system has a distinct mission:
 >>>These Core Systems work together so the constellation remains consistent, long-lived, opportunistic, and trustworthy.
 
 
-- 🌌 Core Systems Creed
+- 🌌 Ancillary Operations Creed
 
 >>The Core Systems are the heartbeat of the constellation — the foundation that keeps every orbit aligned.  
 Each system has a distinct mission:
