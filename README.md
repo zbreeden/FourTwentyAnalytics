@@ -543,35 +543,73 @@ properties:
 
 ```yaml
 $schema: "https://json-schema.org/draft/2020-12/schema"
-title: "statuses seed"
+title: "modules.yml schema"
 type: array
 items:
   type: object
   additionalProperties: false
-  required: [id, label, emoji, order, meaning, criteria, allowed_next]
+  required: [key, repo, orbit, status]
   properties:
-    id:
+    key:
       type: string
       pattern: "^[a-z0-9_]+$"
+      description: "Stable snake_case module key"
     label:
       type: string
       minLength: 1
+    repo:
+      type: string
+      pattern: "^[A-Za-z0-9._-]+$"
+      description: "Repository name (e.g., bank-model)"
+    owner:
+      type: string
+      pattern: "^[A-Za-z0-9-]{1,39}$"
+      description: "GitHub owner/org (optional if full_name used)"
+    full_name:
+      type: string
+      pattern: "^[A-Za-z0-9-]{1,39}/[A-Za-z0-9._-]+$"
+      description: "owner/repo (optional alternative to owner+repo)"
+    orbit:
+      type: string
+      pattern: "^[a-z0-9_]+$"
+    status:
+      type: string
+      pattern: "^[a-z0-9_]+$"
     emoji:
       type: string
       minLength: 1
-    order:
-      type: integer
-      minimum: 0
-    meaning:
+    live_url:
       type: string
-      minLength: 1
-    criteria:
+      pattern: "^https?://.+"
+    description:
+      type: string
+    tags:
       type: array
-      items: { type: string }
-    allowed_next:
+      items:
+        type: string
+        pattern: "^[a-z0-9_]+$"
+    contacts:
       type: array
-      items: { type: string }
+      items:
+        type: string
+        minLength: 1
+    created_at:
+      type: string
+      pattern: "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
+      description: "ISO8601 UTC, e.g. 2025-09-09T12:34:56Z"
+    updated_at:
+      type: string
+      pattern: "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
+allOf:
+  - if:
+      properties:
+        full_name: { type: string }
+    then:
+      properties: {}
+    else:
+      required: [owner]
 ```
+
 ## Seeds
 
 ### seeds/glossary.yml
@@ -863,6 +901,28 @@ funnels:
 }
 ```
 
+### seeds/modules.yml
+
+```yaml
+# Field descriptions:
+# ENTER DATA HERE
+
+- id: seed
+  label: "Seed"
+  emoji: "🌱"
+  order: 01
+  meaning: "Idea captured; repo exists; README stub."
+  criteria: ["repo_created", "readme_stub"]
+  allowed_next: ["sprout"]
+
+- id: sprout
+  label: "Sprout"
+  emoji: "🌿"
+  order: 02
+  meaning: "Scaffold working; basic demo or notebook runs."
+  criteria: ["scaffold_ready", "seeds_defined", "hello_world_demo"]
+  allowed_next: ["budding", "dormant"]
+```
 ## Signals
 
 (Content to be added)
