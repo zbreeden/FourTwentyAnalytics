@@ -221,8 +221,6 @@ Each system has a distinct mission:
 
 ---
 
-## Assets
-
 ## Schemas
 
 --> schema/glossary.schema.yml <--
@@ -292,6 +290,9 @@ items:
     deprecated:
       type: boolean
 
+--> schema/orbits.schema.yml <--
+
+
 ## Seeds
 
 --> seeds/glossary.yml <--
@@ -356,8 +357,9 @@ Notes: Keep tags.yml intentionally smaller than glossary.yml; use it as the cros
 ## Scrubs
 
 ## Workflows
- 
 
+## Assets
+ 
 ## License
 
 MIT — See `LICENSE`. Use freely; please don’t send PII to the sandbox.
