@@ -539,6 +539,39 @@ properties:
     description: "Semantic version of this broadcast schema/content"
 ```
 
+### schema/modules.schema.yml
+
+```yaml
+$schema: "https://json-schema.org/draft/2020-12/schema"
+title: "statuses seed"
+type: array
+items:
+  type: object
+  additionalProperties: false
+  required: [id, label, emoji, order, meaning, criteria, allowed_next]
+  properties:
+    id:
+      type: string
+      pattern: "^[a-z0-9_]+$"
+    label:
+      type: string
+      minLength: 1
+    emoji:
+      type: string
+      minLength: 1
+    order:
+      type: integer
+      minimum: 0
+    meaning:
+      type: string
+      minLength: 1
+    criteria:
+      type: array
+      items: { type: string }
+    allowed_next:
+      type: array
+      items: { type: string }
+```
 ## Seeds
 
 ### seeds/glossary.yml
@@ -778,31 +811,57 @@ funnels:
 
 ```yaml
 # Field descriptions:
-# - id: Unique identifier in snake_case. Stable reference for cross-linking and validation.
-# - label: Human-readable name (Title Case). Display-friendly status name for UI and reports.
-# - emoji: Visual identifier. Single Unicode character for status representation in dashboards and workflows.
-# - order: Sort order. Integer for consistent status progression and lifecycle visualization.
-# - meaning: Purpose and high-level description of the status. One-sentence summary of what this status represents in the module lifecycle.
-# - criteria: Specific requirements and conditions. Array of measurable conditions that must be met to achieve this status.
-# - allowed_next: Valid status transitions. Array of status IDs that can follow this status in the workflow progression.
+# - id: Unique identifier (string). Timestamp + repo + type; ensures stable reference across pulses.
+# - ts_utc: Event timestamp in UTC (ISO 8601). Canonical time anchor for sorting and metrics.
+# - date: Calendar date (YYYY-MM-DD). Readable date key for grouping, reporting, and partitioning.
+# - module: Name of the constellation module (string). High-level system or star this seed belongs to.
+# - repo: Repository slug (string). GitHub repo identifier for traceability back to source code.
+# - title: Short event title (string). Human-friendly name summarizing the broadcast or record.
+# - summary: One-sentence narrative. Explains what happened or why the seed exists.
+# - tags: Array of keywords (list of strings). Used for classification, filtering, and search.
+# - rating: Qualitative priority/impact (string). Values like [low|medium|high]; used to flag importance.
+# - origin: Source metadata block. Captures who/where the seed came from.
+#   - name: Display name of origin system or module.
+#   - url: Canonical link back to origin.
+#   - emoji: Visual marker for the origin system.
+# - links: Related references. Keyed URLs pointing to canonical docs, pages, or datasets.
+#   - readme: Repository README link.
+#   - page: GitHub Pages site or demo link.
+#   - data: Direct link to raw or aggregated data.
+#   - runbook: Link to troubleshooting/operational runbook.
+# - payload: Arbitrary content block. Flexible JSON for notes, details, or additional context.
+#   - notes: Freeform explanatory text attached to this broadcast.
+# - checksum: Integrity hash (string). Optional field to validate payload consistency.
+# - version: Schema or payload version (string). Used for compatibility and migration management.
 
-- id: seed
-  label: "Seed"
-  emoji: "🌱"
-  order: 01
-  meaning: "Idea captured; repo exists; README stub."
-  criteria: ["repo_created", "readme_stub"]
-  allowed_next: ["sprout"]
-
-- id: sprout
-  label: "Sprout"
-  emoji: "🌿"
-  order: 02
-  meaning: "Scaffold working; basic demo or notebook runs."
-  criteria: ["scaffold_ready", "seeds_defined", "hello_world_demo"]
-  allowed_next: ["budding", "dormant"]
+{
+  "id": "2025-09-10T20:00:00Z-fourtwentyanalytics-broadcast-seed",
+  "ts_utc": "2025-09-10T20:00:00Z",
+  "date": "2025-09-10",
+  "module": "FourTwentyAnalytics",
+  "repo": "fourtwentyanalytics",
+  "title": "Master star broadcast seed initialized",
+  "summary": "Bootstrapped constellation broadcasting: schema, nightly pulse, and Signal renderer.",
+  "tags": ["broadcasting", "schema", "renderer", "pulse"],
+  "rating": "high",
+  "origin": {
+    "name": "FourTwenty Analytics",
+    "url": "https://zbreeden.github.io/FourTwentyAnalytics/",
+    "emoji": "🔘"
+  },
+  "links": {
+    "readme": "https://github.com/zbreeden/fourtwentyanalytics#readme",
+    "page": "https://zbreeden.github.io/fourtwentyanalytics/",
+    "data": "https://github.com/zbreeden/fourtwentyanalytics/tree/main/signals",
+    "runbook": "https://github.com/zbreeden/fourtwentyanalytics/blob/main/RUNBOOK.md"
+  },
+  "payload": {
+    "notes": "This is the top-level aggregator in FourTwentyAnalytics. Nightly pulse pulls latest.json from each star."
+  },
+  "checksum": "",
+  "version": "1.0.0"
+}
 ```
-
 
 ## Signals
 
