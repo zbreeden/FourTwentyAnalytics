@@ -449,6 +449,41 @@ $defs:
         minItems: 1
         items: { $ref: "#/$defs/stepSpec" }
 ```
+### schema/latest.schema.yml
+
+```yaml
+$schema: "https://json-schema.org/draft/2020-12/schema"
+title: "statuses seed"
+type: array
+items:
+  type: object
+  additionalProperties: false
+  required: [id, label, emoji, order, meaning, criteria, allowed_next]
+  properties:
+    id:
+      type: string
+      pattern: "^[a-z0-9_]+$"
+    label:
+      type: string
+      minLength: 1
+    emoji:
+      type: string
+      minLength: 1
+    order:
+      type: integer
+      minimum: 0
+    meaning:
+      type: string
+      minLength: 1
+    criteria:
+      type: array
+      items: { type: string }
+    allowed_next:
+      type: array
+      items: { type: string }
+```
+
+
 
 ## Seeds
 
@@ -606,13 +641,38 @@ tech_icons:
 
 ```yaml
 # Field descriptions:
-# - id: Unique identifier in snake_case. Stable reference for cross-linking and validation.
-# - label: Human-readable name (Title Case). Display-friendly status name for UI and reports.
-# - emoji: Visual identifier. Single Unicode character for status representation in dashboards and workflows.
-# - order: Sort order. Integer for consistent status progression and lifecycle visualization.
-# - meaning: Purpose and high-level description of the status. One-sentence summary of what this status represents in the module lifecycle.
-# - criteria: Specific requirements and conditions. Array of measurable conditions that must be met to achieve this status.
-# - allowed_next: Valid status transitions. Array of status IDs that can follow this status in the workflow progression.
+# - version: Schema version (integer). Used for compatibility checks and migrations.
+# - defaults: Global settings applied when not specified at the funnel/step level.
+#   - timezone: IANA timezone string. Used for all timestamp math and SLA calculations.
+#   - sla: Default SLA breach policy. Applied to any step without its own SLA block.
+#     - breach_severity: Breach impact level. One of [warn|error]; drives validator behavior.
+#     - breach_tag: Tag emitted on breach. Lets validators annotate offending records.
+#   - metrics: Derived KPIs the validator can compute from timestamps present in the data.
+#     - id: Metric identifier in snake_case. Stable key for dashboards and exports.
+#     - description: Plain-English metric definition. One-liner explaining the calculation.
+#
+# - funnels: Collection of funnel specifications. Each describes a lifecycle for one entity type.
+#   - id: Unique identifier in snake_case. Stable reference for cross-linking and validation.
+#   - label: Human-readable name (Title Case). Display-friendly funnel name for UI and reports.
+#   - entity: Record type moving through the funnel. Used to join against your source tables.
+#   - key_field: Field path that holds the current step (e.g., "status" or "status/conclusion").
+#   - description: Purpose and scope of the funnel. One-sentence summary of what it models.
+#   - steps: Ordered list of discrete steps in the funnel lifecycle.
+#     - id: Step identifier in snake_case. Stable reference for transitions and metrics.
+#     - label: Human-readable step name (Title Case). Shown in charts and step summaries.
+#     - requires: Preconditions to enter the step. Array of signals/flags your validator checks.
+#     - next: Valid step transitions. Array of step IDs allowed to follow this step.
+#     - sla: Time expectations for this step. Overrides defaults.sla when present.
+#       - max_days_in_step: Maximum days allowed to dwell in this step before breach.
+#       - max_minutes_in_step: Maximum minutes allowed (useful for fast CI pipelines).
+#       - breach_severity: Optional override of breach impact level for this step.
+#       - breach_tag: Optional override of the tag emitted on breach for this step.
+#
+# Notes:
+# - Steps are evaluated in the order listed to compute dwell time and transitions.
+# - If both max_days_in_step and max_minutes_in_step are provided, the stricter limit applies.
+# - Lead/cycle time metrics use the first observed step as the start and honor any paused/dormant
+#   semantics your validator recognizes when computing time exclusions.
 
 version: 1
 defaults:
@@ -642,6 +702,22 @@ funnels:
         requires: ["proposal_issue_open", "rough_tshirt_size"]
         next: ["seed", "scoped"]
         sla: { max_days_in_step: 14, breach_severity: warn }
+ # ---------------------------------------------------------------------------
+  - id: workflow_run
+    label: "GitHub Workflow Run"
+    entity: "workflow_run"
+    key_field: "status/conclusion"
+    description: "CI pipeline health funnel for Actions runs."
+    steps:
+      - id: queued
+        label: "Queued"
+        next: ["in_progress", "cancelled"]
+        sla: { max_minutes_in_step: 10 }
+
+      - id: in_progress
+        label: "In Progress"
+        next: ["success", "failure", "cancelled", "timed_out"]
+        sla: { max_minutes_in_step: 20 }
 ```
 
 ## Signals
