@@ -954,7 +954,29 @@ funnels:
 ### seeds/seedset.yml
 
 ```yaml
-
+# Files to push into every module repo (relative to repo root)
+files:
+  - seeds/emoji_palette.yml
+  - seeds/orbits.yml
+  - seeds/tags.yml
+  - seeds/glossary.yml
+  - seeds/statuses.yml
+  - seeds/modules.yml
+  - seeds/seed.latest.json
+  - seeds/seedset.yml
+  - signals/latest.json
+  - schema/emoji_palette.schema.yml
+  - schema/funnel_spec.schema.yml
+  - seeds/funnel_spec.yml
+  - schema/glossary.schema.yml
+  - schema/latest.schema.yml
+  - schema/modules.schema.yml
+  - schema/orbits.schema.yml
+  - schema/seedset.schema.yml
+  - schema/statuses.schema.yml
+  - schema/tags.schema.yml
+  - root/README.md
+  - root/index.html
 ```
 
 ## Modules
