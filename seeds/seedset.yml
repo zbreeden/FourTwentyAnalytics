@@ -20,6 +20,7 @@ files:
   - schemas/statuses.schema.yml
   - schemas/tags.schema.yml
   - scripts/new-module.sh
+  - scripts/new-broadcast.sh
   - data/internal/
   - data/external/
   - scrubs/
