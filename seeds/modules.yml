@@ -130,7 +130,7 @@
 
 - id: grower_model
   name: Grower Model
-  emoji: "🌱"
+  emoji: "🌻"
   orbit: growth-experiment
   status: developing
   tags: [optimization, loops, growth]
