@@ -1621,7 +1621,7 @@ The constellation's memory keeper. Breathes life into the system by maintaining 
 
 #### 📡 [Signal Model](https://zbreeden.github.io/signal-model/)
 
-> **Status:** Seeded | **Orbit:** Core | **Promotes:** Opportunity
+> **Status:** Developing | **Orbit:** Core | **Promotes:** Opportunity
 
 The constellation's nervous system. Scans outward for insights and broadcasts inward to surface value. Handles telemetry, analytics integration, and user experience monitoring.
 
