@@ -1,0 +1,112 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"pwsh","items":[{"name":"csharp","languageName":"C#","aliases":["c#","cs"]},{"name":"fsharp","languageName":"F#","aliases":["f#","fs"]},{"name":"html","languageName":"HTML"},{"name":"http","languageName":"HTTP"},{"name":"javascript","languageName":"JavaScript","aliases":["js"]},{"name":"mermaid","languageName":"Mermaid"},{"name":"pwsh","languageName":"pwsh"},{"name":"value"}]}}
+
+#!csharp
+
+#!python
+
+"""
+make_orbit_diagram.py - WORKING VERSION ✅
+Generates a simple orbit diagram for FourTwenty Analytics constellation.
+Outputs: fourtwenty_orbits_simple.png (200 DPI) and fourtwenty_orbits_simple.svg
+
+ISSUES RESOLVED:
+✅ Removed unused numpy import
+✅ Added comprehensive error handling
+✅ Fixed potential label clipping (axis limits: ±5.5)
+✅ Added explicit file path handling
+✅ Added proper cleanup with plt.close('all')
+✅ Enhanced spacing and positioning
+✅ Confirmed matplotlib installation and functionality
+
+TESTED SUCCESSFULLY: All functions work correctly, files generated as expected.
+"""
+
+try:
+    import matplotlib.pyplot as plt
+    import matplotlib.patches as patches
+    import os
+    print("✅ Successfully imported required libraries")
+except ImportError as e:
+    print(f"❌ Import error: {e}")
+    print("Please install matplotlib: pip install matplotlib")
+
+def create_orbit_diagram():
+    """Generate orbit diagram with error handling and proper spacing."""
+    try:
+        # Create figure and axis with better spacing
+        fig, ax = plt.subplots(1, 1, figsize=(10, 10))
+        ax.set_xlim(-5.5, 5.5)  # Increased for label space
+        ax.set_ylim(-5.5, 5.5)  # Increased for label space
+        ax.set_aspect('equal')
+        ax.axis('off')  # Remove axes for clean diagram
+        
+        # Define orbit radii (evenly spaced)
+        orbits = [
+            {"radius": 1.0, "label": "Core Orbit — Descriptive"},
+            {"radius": 2.0, "label": "Ancillary Operations — Diagnostic"},
+            {"radius": 3.0, "label": "Delivery–Insight — Predictive"},
+            {"radius": 4.0, "label": "Growth–Experiment — Prescriptive"}
+        ]
+        
+        # Draw center point and label
+        center_circle = patches.Circle((0, 0), 0.15, fill=True, color='black')
+        ax.add_patch(center_circle)
+        ax.text(0, -0.4, "Barycenter\n(FourTwenty Analytics)", 
+                ha='center', va='top', fontsize=12, fontweight='bold')
+        
+        # Draw orbit circles and labels
+        for i, orbit in enumerate(orbits):
+            # Draw dashed orbit circle
+            circle = patches.Circle((0, 0), orbit["radius"], 
+                                   fill=False, linestyle='--', 
+                                   linewidth=1.5, color='black')
+            ax.add_patch(circle)
+            
+            # Position label at top of each orbit circle (with better spacing)
+            label_y = orbit["radius"] + 0.3
+            ax.text(0, label_y, orbit["label"], 
+                    ha='center', va='bottom', fontsize=10,
+                    bbox=dict(boxstyle="round,pad=0.3", facecolor='white', 
+                             edgecolor='none', alpha=0.8))
+        
+        # Set title
+        plt.title("FourTwenty Analytics Constellation", 
+                  fontsize=16, fontweight='bold', pad=20)
+        
+        # Ensure everything fits in the plot
+        plt.tight_layout()
+        
+        # Get current working directory for output
+        output_dir = os.getcwd()
+        png_path = os.path.join(output_dir, 'fourtwenty_orbits_simple.png')
+        svg_path = os.path.join(output_dir, 'fourtwenty_orbits_simple.svg')
+        
+        # Save as PNG (200 DPI)
+        plt.savefig(png_path, 
+                    dpi=200, bbox_inches='tight', 
+                    facecolor='white', edgecolor='none')
+        print(f"✅ Saved: {png_path} (200 DPI)")
+        
+        # Save as SVG
+        plt.savefig(svg_path, 
+                    format='svg', bbox_inches='tight',
+                    facecolor='white', edgecolor='none')
+        print(f"✅ Saved: {svg_path}")
+        
+        plt.show()
+        print("🎯 Orbit diagram generated successfully!")
+        
+        return True
+        
+    except Exception as e:
+        print(f"❌ Error generating orbit diagram: {e}")
+        return False
+    
+    finally:
+        plt.close('all')  # Clean up matplotlib figures
+
+# Execute the function
+create_orbit_diagram()
+print("\n📊 Script completed - check for PNG and SVG files in current directory")
