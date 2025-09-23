@@ -19,5 +19,7 @@ files:
   - schema/seedset.schema.yml
   - schema/statuses.schema.yml
   - schema/tags.schema.yml
+  - scripts/new-module.sh
+  - scrubs/
   - root/README.md
   - root/index.html
