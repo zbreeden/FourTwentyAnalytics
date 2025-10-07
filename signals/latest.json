@@ -1,0 +1,17 @@
+{
+  "broadcast.id": "20251006T182356Z-FourTwentyAnalytics-protector_model",
+  "ts.utc5": "2025-10-06T14:23:56.832398-04:00",
+  "date": "2025-10-06",
+  "module.id": "protector_model",
+  "broadcast.rating": "critical",
+  "broadcast.name": "Broadcast Testing",
+  "broadcast.summary": "Testing broadcast functionality via website interface",
+  "status.id": "developing",
+  "artifact.git.link": "https://zbreeden.github.io/protector-model/",
+  "tags.keys": [
+    "testing",
+    "signal"
+  ],
+  "glyph_icons": "🛡️",
+  "status_icons": "🚨"
+}
