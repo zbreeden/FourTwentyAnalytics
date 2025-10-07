@@ -1,0 +1,84 @@
+<!-- Structure for FourTwenty Analytics website - index.html -->
+<!-- Keep all CSS and JS external -->
+
+<!DOCTYPE html> <!-- HTML5 -->
+<html lang="en"> <!-- English -->
+<head> <!-- Head section -->
+    <meta charset="UTF-8"> <!-- Character encoding -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive design -->
+    <title>FourTwenty Analytics</title> <!-- Page title -->
+    <link rel="stylesheet" type="text/css" href="index.css"> <!-- Link to external CSS -->
+    <link rel="icon" type="image/png" href="assets/logo-420-transparent.png"> <!-- FourTwenty Analytics logo -->
+    <link rel="stylesheet" type="yaml" href="seeds/modules.yml"> <!-- Modules YAML -->
+    <link rel="stylesheet" type="json" href="signals/latest.json"> <!-- Latest JSON data -->
+    <link rel="stylesheet" type="yaml" href="seeds/statuses.yml"> <!-- Statuses YAML -->
+    <link rel="stylesheet" type="csv" href="data/broadcast.csv"> <!-- Broadcast CSV data -->
+    <link rel="stylesheet" type="csv" href="data/master.workflow.csv"> <!-- Master workflow CSV data -->
+    <link rel="stylesheet" type="yaml" href='seeds/seedset.yml'> <!-- Seedset YAML -->
+    <link rel="markdown" href="README.md"> <!-- README file -->
+</head> <!-- End head section -->
+<body> <!-- Body section -->
+    <header> <!-- Header section -->
+        <div class="header-title">
+            <h1>🔘 FourTwenty Analytics</h1>
+            <p class="tagline">All data seeds emanate from the hub in that this system exists so that all other systems can exist</p>
+        </div>
+        <div class="header-logo">
+            <img src="assets/logo-420-transparent.png" alt="FourTwenty Analytics logo" class="site-logo" width="36" height="36">
+        </div>
+    </header>
+    <main>
+        <section id="actionSection">
+            <div id="actionButtons" class="action-buttons">
+                <button id="showReadmeBtn" class="action-button">Show README</button>
+                <button id="showModulesBtn" class="action-button">Show Constellation</button>
+                <button id="openBroadcastBtn" class="action-button">Open Broadcast Form</button>
+                <button id="openWorkflowBtn" class="action-button">Open Workflow</button>
+            </div>
+            <!-- dynamic action buttons (populated from data/actions.json if present) -->
+            <div id="dynamicActions" class="dynamic-actions" aria-live="polite"></div>
+        </section>
+
+        <section id="readmeSection" hidden>
+            <h2>README</h2>
+            <div id="readme-container"></div>
+            <button id="hideReadmeBtn" class="action-button">Hide README</button>
+        </section>
+        <section id="modulesSection" hidden>
+            <h2>Constellation Modules</h2>
+            <div id="modules-container"></div>
+            <button id="hideModulesBtn" class="action-button">Hide Constellation</button>
+        </section>
+        <!-- Workflow modal (hidden by default) -->
+        <div id="workflowModal" class="modal" aria-hidden="true">
+            <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="workflowTitle">
+                <header class="modal-header">
+                    <h3 id="workflowTitle">Workflow</h3>
+                    <button id="closeWorkflowBtn" class="modal-close" aria-label="Close">×</button>
+                </header>
+                <div class="modal-body">
+                    <img src="assets/workflow.png" alt="Workflow Diagram" class="workflow-image">
+                </div>
+            </div>
+        </div>
+        <!-- Broadcast modal (hidden by default) -->
+        <div id="broadcastModal" class="modal" aria-hidden="true">
+            <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="broadcastTitle">
+                <header class="modal-header">
+                    <h3 id="broadcastTitle">Broadcast Form</h3>
+                    <button id="closeBroadcastBtn" class="modal-close" aria-label="Close">×</button>
+                </header>
+                <div class="modal-body">
+                    <form id="broadcastForm"></form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="site-footer">
+        <div class="footer-inner">© FourTwenty Analytics — All rights reserved.</div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
