@@ -123,6 +123,55 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Small helper to create a copyable command tip block
+  function createCommandHelp(command, label) {
+    const help = document.createElement('div');
+    help.className = 'command-help';
+    help.style.marginTop = '12px';
+    help.style.padding = '10px';
+    help.style.border = '1px dashed #ccc';
+    help.style.background = '#fafafa';
+    help.style.display = 'flex';
+    help.style.flexDirection = 'column';
+
+    const p = document.createElement('p');
+    p.style.margin = '0 0 6px 0';
+    p.style.fontSize = '0.95rem';
+    p.textContent = label || 'Tip:';
+
+    const pre = document.createElement('pre');
+    pre.style.margin = '0 0 8px 0';
+    pre.style.padding = '6px';
+    pre.style.background = '#fff';
+    pre.style.border = '1px solid #eee';
+    pre.style.borderRadius = '4px';
+    pre.textContent = command;
+
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.textContent = 'Copy command';
+    btn.style.alignSelf = 'flex-start';
+    btn.addEventListener('click', () => {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(command).then(() => {
+          const old = btn.textContent;
+          btn.textContent = 'Copied!';
+          setTimeout(() => btn.textContent = old, 1800);
+        }).catch(() => {
+          alert('Copy failed — please select and copy manually:\n' + command);
+        });
+      } else {
+        // fallback: select the text in the pre and instruct the user
+        alert('Select and copy this command manually:\n' + command);
+      }
+    });
+
+    help.appendChild(p);
+    help.appendChild(pre);
+    help.appendChild(btn);
+    return help;
+  }
+
   // README show/hide
   if (showReadmeBtn) {
     showReadmeBtn.addEventListener('click', async () => {
@@ -458,6 +507,16 @@ document.addEventListener("DOMContentLoaded", () => {
       // insert the form at the top of modal body, keep the existing workflow image below
       workflowModalBody.insertBefore(wfForm, workflowModalBody.firstChild);
 
+      // Add a simple tip showing the command to run the workflow from the repo root
+      try {
+        const wfTip = createCommandHelp('python3 workflow.py', 'Run this from the repository root:');
+        // insert right after the form
+        if (wfForm.nextSibling) workflowModalBody.insertBefore(wfTip, wfForm.nextSibling);
+        else workflowModalBody.appendChild(wfTip);
+      } catch (e) {
+        // ignore failures in UI tip creation
+      }
+
       // handle submit
       wfForm.addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -567,6 +626,18 @@ document.addEventListener("DOMContentLoaded", () => {
       artifactGitLink: document.getElementById('artifactGitLink')?.value || '',
       tagsKeys: (document.getElementById('tagsKeys')?.value || '').split(',').map(s => s.trim()).filter(Boolean)
     };
+
+    // Add a simple tip showing the command to run the broadcast script from the repo root
+    try {
+      const broadcastModalBody = document.querySelector('#broadcastModal .modal-body');
+      if (broadcastModalBody) {
+        const bcastTip = createCommandHelp('python3 broadcast.py', 'Run this from the repository root:');
+        // insert at top so it's visible before the form fields
+        broadcastModalBody.insertBefore(bcastTip, broadcastModalBody.firstChild);
+      }
+    } catch (e) {
+      // ignore UI tip errors
+    }
 
     // Prepare payload for GTM / dataLayer so tags can react to this interaction
     try {
